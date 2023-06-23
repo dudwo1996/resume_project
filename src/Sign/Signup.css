@@ -1,0 +1,95 @@
+.signup-container {
+    text-align: left;
+    width: 400px;
+}
+.signup-logo {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: transparent;
+}
+.signup-container h1 {
+    all: unset;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: hsl(0, 0%, 44%);
+}
+
+.signup-container input {
+    margin-top: 5px;
+    transition: 300ms;
+    box-shadow: inset 0px 0px 0px 1px hsl(0, 0%, 75%);
+    width: 94%;
+    height: 25px;
+    font-size: 14px;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: #707070;
+}
+
+.signup-container div span {
+    color: #707070;
+    font-weight: 800;
+}
+
+.signup-container input:focus {
+    outline: 1px solid hsl(209, 70%, 60%);
+}
+
+.nickname-div {
+    margin-bottom: 13px;
+}
+.id-div {
+    margin-bottom: 13px;
+}
+.password-div {
+    margin-bottom: 13px;
+}
+.verifyPassword-div {
+    margin-bottom: 20px;
+}
+
+.signup-button-div {
+    width: 100%;
+    background-color: hsl(209, 70%, 60%);
+    color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.signup-button-div button {
+    width: 100%;
+    background-color: hsl(209, 70%, 60%);
+    color: #ffffff;
+}
+
+.signup-button-div button:hover {
+    width: 100%;
+    background-color: rgb(0, 108, 209);
+    color: #ffffff;
+    border: 1px solid rgb(0, 108, 209);
+}
+
+.signin-link {
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #888888;
+    text-align: right;
+}
+.signin-link:hover {
+    color: #888888;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.signin-link:focus {
+    outline: none;
+}
