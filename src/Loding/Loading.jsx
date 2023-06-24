@@ -1,8 +1,8 @@
+import './Loading.css';
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import './Home.css';
 
-const Home = () => {
+const Loading = () => {
     return (
         <h1>
             <span>r</span>
@@ -11,7 +11,6 @@ const Home = () => {
             <span>u</span>
             <span>m</span>
             <span>e</span>
-            <span>_</span>
             <span>p</span>
             <span>r</span>
             <span>o</span>
@@ -23,4 +22,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Loading;

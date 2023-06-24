@@ -68,9 +68,13 @@
     width: 100%;
     background-color: hsl(209, 70%, 60%);
     color: #ffffff;
+    box-shadow: 2px 2px 2px black;
 }
 
-.signin-button:focus {
+.signin-button button:active {
+    box-shadow: none;
+}
+.signin-button:active {
     outline: none;
 }
 .signin-button button:hover {
