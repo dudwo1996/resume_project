@@ -27,21 +27,27 @@ const Signup = () => {
     }, []);
 
     const signup = () => {
-        add({ nickname: nick, id: id, password: password }).then(
-            () => {
-                navigate('/signin');
-                // alert('회원가입이 완료되었습니다. 로그인 후 이용해보세요.');
-            },
-            (err) => {
-                console.log(err);
-            }
-        );
+        if (isNick === false) {
+            alert('닉네임 중복확인을 해주세요.');
+        } else if (isId === false) {
+            alert('아이디 중복확인을 해주세요.');
+        } else if (password !== veriPassword) {
+            alert('비밀번호와 비밀번호 확인이 다릅니다.');
+        } else {
+            add({ nickname: nick, id: id, password: password }).then(
+                () => {
+                    navigate('/signin');
+                },
+                (err) => {
+                    console.log(err);
+                }
+            );
+        }
     };
 
     const nickConfirm = () => {
         const verifyNick = db.filter((db) => db.nickname === nick);
         if (verifyNick.length === 0) {
-            // alert('사용가능한 아이디입니다.');
             if (confirm('사용가능한 닉네임입니다. 사용하시겠습니까?')) {
                 setIsNick(true);
             } else {
@@ -54,7 +60,6 @@ const Signup = () => {
     const idConfirm = () => {
         const verifyId = db.filter((db) => db.id === id);
         if (verifyId.length === 0) {
-            // alert('사용가능한 아이디입니다.');
             if (confirm('사용가능한 아이디입니다. 사용하시겠습니까?')) {
                 setIsId(true);
             } else {
@@ -66,7 +71,7 @@ const Signup = () => {
     };
 
     return (
-        <form className="signup-container" onSubmit={signup}>
+        <div className="signup-container">
             <div className="signup-logo">
                 <img className="" src={addUserIcon} />
             </div>
@@ -131,14 +136,16 @@ const Signup = () => {
                 />
             </div>
             <div className="signup-button-div">
-                <button type="submit">회원가입 완료</button>
+                <button type="button" onClick={signup}>
+                    회원가입 완료
+                </button>
             </div>
             <div className="signin-button">
                 <Link className="signin-link" to="/signin">
                     로그인 페이지로 이동
                 </Link>
             </div>
-        </form>
+        </div>
     );
 };
 
