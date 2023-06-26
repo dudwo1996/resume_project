@@ -1,26 +1,25 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './Home.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Loading from '../Loding/Loading';
 
 const Home = () => {
-    return (
-        <h1>
-            <span>r</span>
-            <span>e</span>
-            <span>s</span>
-            <span>u</span>
-            <span>m</span>
-            <span>e</span>
-            <span>_</span>
-            <span>p</span>
-            <span>r</span>
-            <span>o</span>
-            <span>j</span>
-            <span>e</span>
-            <span>c</span>
-            <span>t</span>
-        </h1>
-    );
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 2000);
+    }, []);
+
+    if (isLoading) {
+        return <Loading />;
+    } else {
+        return <div>home</div>;
+    }
 };
 
 export default Home;

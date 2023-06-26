@@ -4,6 +4,7 @@ import './Signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import addUserIcon from '../image/add-user.png';
 import { useIndexedDB } from 'react-indexed-db';
+import CheckIcon from '../image/check.png';
 
 const Signup = () => {
     const { add } = useIndexedDB('member');
@@ -13,6 +14,17 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     // eslint-disable-next-line no-unused-vars
     const [veriPassword, setVeriPassword] = useState('');
+    const { getAll } = useIndexedDB('member');
+    const [db, setDb] = useState();
+    const [isNick, setIsNick] = useState(false);
+    const [isId, setIsId] = useState(false);
+
+    useEffect(() => {
+        getAll().then((dbData) => {
+            setDb(dbData);
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const signup = () => {
         add({ nickname: nick, id: id, password: password }).then(
@@ -26,6 +38,33 @@ const Signup = () => {
         );
     };
 
+    const nickConfirm = () => {
+        const verifyNick = db.filter((db) => db.nickname === nick);
+        if (verifyNick.length === 0) {
+            // alert('사용가능한 아이디입니다.');
+            if (confirm('사용가능한 닉네임입니다. 사용하시겠습니까?')) {
+                setIsNick(true);
+            } else {
+                setIsNick(false);
+            }
+        } else {
+            alert('이미 사용중인 닉네임입니다.');
+        }
+    };
+    const idConfirm = () => {
+        const verifyId = db.filter((db) => db.id === id);
+        if (verifyId.length === 0) {
+            // alert('사용가능한 아이디입니다.');
+            if (confirm('사용가능한 아이디입니다. 사용하시겠습니까?')) {
+                setIsId(true);
+            } else {
+                setIsId(false);
+            }
+        } else {
+            alert('이미 사용중인 아이디입니다.');
+        }
+    };
+
     return (
         <form className="signup-container" onSubmit={signup}>
             <div className="signup-logo">
@@ -34,15 +73,46 @@ const Signup = () => {
             <h1 style={{ textAlign: 'center' }}>회원가입</h1>
             <div className="nickname-div">
                 <span style={{ marginBottom: '5px' }}>닉네임</span>
-                <input
-                    type="text"
-                    placeholder="사용할 닉네임을 입력하세요."
-                    onChange={(e) => setNick(e.target.value)}
-                />
+                <div className="nickname-input-button">
+                    <input
+                        type="text"
+                        placeholder="사용할 닉네임을 입력하세요."
+                        onChange={(e) => setNick(e.target.value)}
+                        style={isNick ? { backgroundColor: 'lightGrey', width: '300px' } : { width: '300px' }}
+                        value={nick}
+                        readOnly={isNick ? true : false}
+                    />
+                    <button
+                        type="button"
+                        disabled={isNick ? true : false}
+                        onClick={nickConfirm}
+                        style={isNick ? { boxShadow: 'none' } : {}}
+                    >
+                        {isNick ? <img src={CheckIcon} /> : '중복확인'}
+                    </button>
+                </div>
             </div>
             <div className="id-div">
                 <span>아이디</span>
-                <input type="text" placeholder="사용할 아이디를 입력하세요." onChange={(e) => setId(e.target.value)} />
+                <div className="id-input-button">
+                    <input
+                        type="text"
+                        placeholder="사용할 아이디를 입력하세요."
+                        onChange={(e) => setId(e.target.value)}
+                        style={isId ? { backgroundColor: 'lightGrey', width: '300px' } : { width: '300px' }}
+                        value={id}
+                        readOnly={isId ? true : false}
+                    />
+
+                    <button
+                        type="button"
+                        onClick={idConfirm}
+                        disabled={isId ? true : false}
+                        style={isId ? { boxShadow: 'none' } : {}}
+                    >
+                        {isId ? <img src={CheckIcon} /> : '중복확인'}
+                    </button>
+                </div>
             </div>
             <div className="password-div">
                 <span>비밀번호</span>

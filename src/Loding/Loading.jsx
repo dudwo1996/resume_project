@@ -11,6 +11,7 @@ const Loading = () => {
             <span>u</span>
             <span>m</span>
             <span>e</span>
+            <span>_</span>
             <span>p</span>
             <span>r</span>
             <span>o</span>
