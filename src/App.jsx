@@ -9,7 +9,7 @@ import Home from './Home/Home';
 function App() {
     return (
         <>
-            <div className="APP">
+            <div className="App">
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Signin />} />

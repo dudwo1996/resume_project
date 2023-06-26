@@ -4,11 +4,14 @@ import App from './App.jsx';
 import './index.css';
 import { initDB } from 'react-indexed-db';
 import { DBConfig } from './DB/DBConfig';
+import { CookiesProvider } from 'react-cookie';
 
 initDB(DBConfig);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <App />
+        <CookiesProvider>
+            <App />
+        </CookiesProvider>
     </React.StrictMode>
 );

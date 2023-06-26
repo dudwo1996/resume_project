@@ -5,24 +5,29 @@ import { Link, useNavigate } from 'react-router-dom';
 import addUserIcon from '../image/add-user.png';
 import { useIndexedDB } from 'react-indexed-db';
 import CheckIcon from '../image/check.png';
+import Loading from '../Loding/Loading';
 
 const Signup = () => {
-    const { add } = useIndexedDB('member');
     const navigate = useNavigate();
     const [nick, setNick] = useState('');
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     // eslint-disable-next-line no-unused-vars
     const [veriPassword, setVeriPassword] = useState('');
-    const { getAll } = useIndexedDB('member');
+    const { getAll, add } = useIndexedDB('member');
     const [db, setDb] = useState();
     const [isNick, setIsNick] = useState(false);
     const [isId, setIsId] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         getAll().then((dbData) => {
             setDb(dbData);
         });
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -36,6 +41,7 @@ const Signup = () => {
         } else {
             add({ nickname: nick, id: id, password: password }).then(
                 () => {
+                    alert('회원가입이 완료되었습니다.');
                     navigate('/signin');
                 },
                 (err) => {
@@ -70,83 +76,87 @@ const Signup = () => {
         }
     };
 
-    return (
-        <div className="signup-container">
-            <div className="signup-logo">
-                <img className="" src={addUserIcon} />
-            </div>
-            <h1 style={{ textAlign: 'center' }}>회원가입</h1>
-            <div className="nickname-div">
-                <span style={{ marginBottom: '5px' }}>닉네임</span>
-                <div className="nickname-input-button">
-                    <input
-                        type="text"
-                        placeholder="사용할 닉네임을 입력하세요."
-                        onChange={(e) => setNick(e.target.value)}
-                        style={isNick ? { backgroundColor: 'lightGrey', width: '300px' } : { width: '300px' }}
-                        value={nick}
-                        readOnly={isNick ? true : false}
-                    />
-                    <button
-                        type="button"
-                        disabled={isNick ? true : false}
-                        onClick={nickConfirm}
-                        style={isNick ? { boxShadow: 'none' } : {}}
-                    >
-                        {isNick ? <img src={CheckIcon} /> : '중복확인'}
-                    </button>
+    if (isLoading) {
+        return <Loading />;
+    } else {
+        return (
+            <div className="signup-container">
+                <div className="signup-logo">
+                    <img className="" src={addUserIcon} />
                 </div>
-            </div>
-            <div className="id-div">
-                <span>아이디</span>
-                <div className="id-input-button">
-                    <input
-                        type="text"
-                        placeholder="사용할 아이디를 입력하세요."
-                        onChange={(e) => setId(e.target.value)}
-                        style={isId ? { backgroundColor: 'lightGrey', width: '300px' } : { width: '300px' }}
-                        value={id}
-                        readOnly={isId ? true : false}
-                    />
+                <h1 style={{ textAlign: 'center' }}>회원가입</h1>
+                <div className="nickname-div">
+                    <span style={{ marginBottom: '5px' }}>닉네임</span>
+                    <div className="nickname-input-button">
+                        <input
+                            type="text"
+                            placeholder="사용할 닉네임을 입력하세요."
+                            onChange={(e) => setNick(e.target.value)}
+                            style={isNick ? { backgroundColor: 'lightGrey', width: '300px' } : { width: '300px' }}
+                            value={nick}
+                            readOnly={isNick ? true : false}
+                        />
+                        <button
+                            type="button"
+                            disabled={isNick ? true : false}
+                            onClick={nickConfirm}
+                            style={isNick ? { boxShadow: 'none' } : {}}
+                        >
+                            {isNick ? <img src={CheckIcon} /> : '중복확인'}
+                        </button>
+                    </div>
+                </div>
+                <div className="id-div">
+                    <span>아이디</span>
+                    <div className="id-input-button">
+                        <input
+                            type="text"
+                            placeholder="사용할 아이디를 입력하세요."
+                            onChange={(e) => setId(e.target.value)}
+                            style={isId ? { backgroundColor: 'lightGrey', width: '300px' } : { width: '300px' }}
+                            value={id}
+                            readOnly={isId ? true : false}
+                        />
 
-                    <button
-                        type="button"
-                        onClick={idConfirm}
-                        disabled={isId ? true : false}
-                        style={isId ? { boxShadow: 'none' } : {}}
-                    >
-                        {isId ? <img src={CheckIcon} /> : '중복확인'}
+                        <button
+                            type="button"
+                            onClick={idConfirm}
+                            disabled={isId ? true : false}
+                            style={isId ? { boxShadow: 'none' } : {}}
+                        >
+                            {isId ? <img src={CheckIcon} /> : '중복확인'}
+                        </button>
+                    </div>
+                </div>
+                <div className="password-div">
+                    <span>비밀번호</span>
+                    <input
+                        type="password"
+                        placeholder="사용할 비밀번호를 입력하세요."
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className="verifyPassword-div">
+                    <span>비밀번호 확인</span>
+                    <input
+                        type="password"
+                        placeholder="다시한번 비밀번호를 입력하세요."
+                        onChange={(e) => setVeriPassword(e.target.value)}
+                    />
+                </div>
+                <div className="signup-button-div">
+                    <button type="button" onClick={signup}>
+                        회원가입 완료
                     </button>
                 </div>
+                <div className="signin-button">
+                    <Link className="signin-link" to="/signin">
+                        로그인 페이지로 이동
+                    </Link>
+                </div>
             </div>
-            <div className="password-div">
-                <span>비밀번호</span>
-                <input
-                    type="password"
-                    placeholder="사용할 비밀번호를 입력하세요."
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-            </div>
-            <div className="verifyPassword-div">
-                <span>비밀번호 확인</span>
-                <input
-                    type="password"
-                    placeholder="다시한번 비밀번호를 입력하세요."
-                    onChange={(e) => setVeriPassword(e.target.value)}
-                />
-            </div>
-            <div className="signup-button-div">
-                <button type="button" onClick={signup}>
-                    회원가입 완료
-                </button>
-            </div>
-            <div className="signin-button">
-                <Link className="signin-link" to="/signin">
-                    로그인 페이지로 이동
-                </Link>
-            </div>
-        </div>
-    );
+        );
+    }
 };
 
 export default Signup;

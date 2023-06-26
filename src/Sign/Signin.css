@@ -1,6 +1,7 @@
 .signin-container {
     text-align: center;
     width: 400px;
+    margin: auto;
 }
 .signin-logo {
     margin-bottom: 20px;
@@ -70,7 +71,9 @@
     color: #ffffff;
     box-shadow: 2px 2px 2px black;
 }
-
+.signin-button button:focus {
+    outline: none;
+}
 .signin-button button:active {
     box-shadow: none;
 }

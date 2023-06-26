@@ -1,0 +1,19 @@
+.AppBody-container {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-resume-img {
+    border-radius: 10px;
+}
+
+.add-resume-img:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+
+.add-resume-img img {
+    margin: 20px;
+}
