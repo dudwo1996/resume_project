@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import './AppBody.css';
-import addResumeIcon from '../image/add-business-card-symbol.png';
+import addResumeIcon from '../image/edit.png';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import Loading from '../Loding/Loading';

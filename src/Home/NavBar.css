@@ -12,3 +12,11 @@
     margin-right: 10px;
     color: #ffffff;
 }
+.user-nick {
+    cursor: pointer;
+    font-size: 16px;
+}
+.user-nick:hover {
+    font-size: 18px;
+    transition: 300ms;
+}

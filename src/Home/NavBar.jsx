@@ -12,18 +12,27 @@ const NavBar = () => {
     const userId = useCookies(['id'])[0].id;
     const { getByIndex } = useIndexedDB('member');
     const [memberInfo, setMemberInfo] = useState([]);
+    const [isDropDown, setIsDropDown] = useState(false);
     useEffect(() => {
         getByIndex('id', userId).then((data) => {
             setMemberInfo(data);
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    useEffect(() => {
+        console.log(isDropDown);
+    }, [isDropDown]);
     return (
         <nav className="nav-bar-container">
             <div style={{ color: '#ffffff', marginLeft: '10px' }}>CYJ's Resume Project</div>
             <div className="userInfo-div">
                 <img src={userIcon} style={{ marginRight: '5px' }} />
-                <div>{memberInfo.nickname}</div>
+                <div className="user-nick" onClick={() => setIsDropDown(!isDropDown)}>
+                    {memberInfo.nickname}
+                </div>
+                {/* <div className="dropdown" style={isDropDown ? { display: 'block' } : { display: 'none' }}>
+                    <div className="dropdown-item">로그아웃</div>
+                </div> */}
             </div>
         </nav>
     );

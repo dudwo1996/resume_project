@@ -27,7 +27,7 @@ const Signup = () => {
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
-        }, 1500);
+        }, 500);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
