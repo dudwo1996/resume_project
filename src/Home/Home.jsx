@@ -4,8 +4,8 @@ import './Home.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Loading from '../Loding/Loading';
-import MenuBar from './MenuBar';
 import NavBar from './NavBar';
+// import AppBody from './AppBody';
 import AppBody from './AppBody';
 
 const Home = () => {
@@ -24,8 +24,9 @@ const Home = () => {
         return (
             <div className="home-container">
                 <NavBar />
-                <MenuBar />
-                <AppBody />
+                <body style={{ justifyContent: 'center', alignItems: 'center' }}>
+                    <AppBody />
+                </body>
             </div>
         );
     }

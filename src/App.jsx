@@ -5,6 +5,7 @@ import Signin from './Sign/Signin';
 import Signup from './Sign/Signup';
 import Intro from './Sign/Intro';
 import Home from './Home/Home';
+import WriteResume from './Resume/WriteReusme';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                         <Route path="/signup" element={<Signup />} />
                         <Route path="/intro" element={<Intro />} />
                         <Route path="/home" element={<Home />} />
+                        <Route path="/writeresume" element={<WriteResume />} />
                     </Routes>
                 </BrowserRouter>
             </div>

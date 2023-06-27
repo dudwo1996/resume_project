@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './NavBar.css';
@@ -19,9 +20,10 @@ const NavBar = () => {
     }, []);
     return (
         <nav className="nav-bar-container">
+            <div style={{ color: '#ffffff', marginLeft: '10px' }}>CYJ's Resume Project</div>
             <div className="userInfo-div">
                 <img src={userIcon} style={{ marginRight: '5px' }} />
-                <div value={memberInfo.nickname}>{memberInfo.nickname}</div>
+                <div>{memberInfo.nickname}</div>
             </div>
         </nav>
     );
