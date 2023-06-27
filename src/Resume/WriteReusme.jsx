@@ -1,8 +1,23 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Loading from '../Loding/Loading';
 
 const WriteResume = () => {
-    return <div>이력서 작성</div>;
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 500);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    if (isLoading) {
+        return <Loading />;
+    } else {
+        return <div>이력서 양식</div>;
+    }
 };
 
 export default WriteResume;

@@ -6,6 +6,7 @@ import Signup from './Sign/Signup';
 import Intro from './Sign/Intro';
 import Home from './Home/Home';
 import WriteResume from './Resume/WriteReusme';
+import AppBody from './Home/AppBody';
 
 function App() {
     return (
@@ -17,8 +18,10 @@ function App() {
                         <Route path="/signin" element={<Signin />} />
                         <Route path="/signup" element={<Signup />} />
                         <Route path="/intro" element={<Intro />} />
-                        <Route path="/home" element={<Home />} />
-                        <Route path="/writeresume" element={<WriteResume />} />
+                        <Route path="/home" element={<Home />}>
+                            <Route path="/home/appbody" element={<AppBody />} />
+                            <Route path="/home/writeresume" element={<WriteResume />} />
+                        </Route>
                     </Routes>
                 </BrowserRouter>
             </div>

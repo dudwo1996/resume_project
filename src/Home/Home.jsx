@@ -1,35 +1,34 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './Home.css';
-import { useState } from 'react';
 import { useEffect } from 'react';
-import Loading from '../Loding/Loading';
 import NavBar from './NavBar';
-// import AppBody from './AppBody';
-import AppBody from './AppBody';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const Home = () => {
-    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 2000);
+        navigate('/home/appbody');
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    if (isLoading) {
-        return <Loading />;
-    } else {
-        return (
-            <div className="home-container">
-                <NavBar />
-                <body style={{ justifyContent: 'center', alignItems: 'center' }}>
-                    <AppBody />
-                </body>
+    return (
+        <div className="home-container">
+            <NavBar />
+            <div
+                style={{
+                    display: 'flex',
+                    width: '100%',
+                    height: '100%',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <Outlet />
             </div>
-        );
-    }
+        </div>
+    );
 };
 
 export default Home;

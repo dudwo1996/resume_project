@@ -9,16 +9,18 @@ import { useCookies } from 'react-cookie';
 const Signin = () => {
     const { getAll } = useIndexedDB('member');
     // eslint-disable-next-line no-unused-vars
-    const [cookies, setCookies] = useCookies(['id']);
+    const [cookies, setCookies, removeCookie] = useCookies(['id']);
     const navigate = useNavigate();
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [db, setDb] = useState();
     useEffect(() => {
-        window.indexedDB.open('MemberDB', 1);
         getAll().then((dbData) => {
             setDb(dbData);
         });
+        if (cookies) {
+            removeCookie('id');
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

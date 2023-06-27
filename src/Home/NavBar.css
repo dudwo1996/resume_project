@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     grid-area: nav;
-    background-color: black;
+    background-color: hsl(209, 70%, 60%);
 }
 .userInfo-div {
     display: flex;
