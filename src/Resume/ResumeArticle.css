@@ -1,0 +1,129 @@
+.article-container {
+    width: 100%;
+    height: 100%;
+}
+.resume-title-div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 70%;
+    background: #ffffff;
+    margin: auto;
+    margin-top: 15px;
+    height: 40px;
+    border-radius: 10px;
+}
+.resume-title-box {
+    margin-left: 10px;
+    width: 80%;
+    height: 70%;
+    border: none;
+}
+
+.resume-title-box:hover {
+    background: #f2f2f2;
+}
+
+.resume-title-box:focus {
+    outline: none;
+}
+
+.resume-profile-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+.profile-image-div {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-image {
+    display: none;
+    width: 0px;
+    height: 0px;
+}
+.image-input-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.image-input-label:hover {
+    cursor: pointer;
+    background-color: #f2f2f2;
+}
+.user-info-div {
+    display: flex;
+}
+.user-name-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.user-name {
+    all: unset;
+    display: block;
+    background-color: #ffffff;
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.user-name:hover {
+    background-color: #f2f2f2;
+}
+
+.user-birth {
+    all: unset;
+    display: block;
+    margin-left: 10px;
+    background-color: #ffffff;
+    width: 200px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.user-birth:hover {
+    background-color: #f2f2f2;
+}
+.user-phone-num {
+    all: unset;
+    display: block;
+    margin-left: 10px;
+    background-color: #ffffff;
+    width: 200px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.user-phone-num:hover {
+    background-color: #f2f2f2;
+}
+.user-email {
+    all: unset;
+    display: block;
+    margin-left: 10px;
+    background-color: #ffffff;
+    width: 200px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.user-email:hover {
+    background-color: #f2f2f2;
+}
