@@ -10,6 +10,9 @@ const ResumeArticle = () => {
             <div className="resume-title-div">
                 <input className="resume-title-box" placeholder="자기만의 이력서 제목을 입력해주세요." />
             </div>
+            <div style={{ width: '70%', margin: 'auto' }}>
+                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>기본 정보</h4>
+            </div>
             <div className="resume-profile-div">
                 <div className="profile-image-div">
                     <input id="profile-image-input" className="profile-image" type="file" />
@@ -36,6 +39,45 @@ const ResumeArticle = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div style={{ width: '70%', margin: 'auto' }}>
+                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>학력</h4>
+            </div>
+            <div className="education-div">
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        alignSelf: 'flex-start',
+                        marginTop: '23px',
+                    }}
+                >
+                    <input className="education-year" type="text" placeholder="YYYY" />
+                    <span>.</span>
+                    <input className="education-month" type="text" placeholder="MM" />
+                    <span style={{ height: '19px', fontSize: '14px' }}>졸업(예정)</span>
+                </div>
+                <div>
+                    <select className="education-select" placeholder="학력 구분">
+                        <option>고등학교</option>
+                        <option>대학(2,3년)</option>
+                        <option>대학교(4년)</option>
+                        <option>대학원(석사)</option>
+                        <option>대학원(박사)</option>
+                    </select>
+                    <span style={{ fontSize: '15px' }}> | </span>
+                    <input className="school-name" type="text" placeholder="학교명을 입력해주세요." />
+                    <div>
+                        <input className="Major-name" type="text" placeholder="학과명을 입력해주세요." />
+                        <input className="education-score" type="text" placeholder="학점" />
+                        <span>/</span>
+                        <input className="perfect-score" type="text" placeholder="4.5" />
+                    </div>
+                </div>
+            </div>
+            <div style={{ width: '70%', margin: 'auto' }}>
+                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>링크</h4>
             </div>
         </div>
     );

@@ -35,7 +35,7 @@
     width: 70%;
     height: 100px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 5px;
     background: #ffffff;
     border-radius: 10px;
 }
@@ -78,7 +78,7 @@
     all: unset;
     display: block;
     background-color: #ffffff;
-    width: 200px;
+    width: 150px;
     height: 50px;
     font-size: 25px;
     border-radius: 5px;
@@ -125,5 +125,94 @@
     border-radius: 5px;
 }
 .user-email:hover {
+    background-color: #f2f2f2;
+}
+.education-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 100px;
+    margin: auto;
+    margin-top: 5px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.education-year {
+    all: unset;
+    display: block;
+    background-color: #ffffff;
+    width: 40px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.education-year:hover {
+    background-color: #f2f2f2;
+}
+.education-month {
+    all: unset;
+    display: block;
+    background-color: #ffffff;
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+.education-month:hover {
+    background-color: #f2f2f2;
+}
+.education-select {
+    all: unset;
+}
+.education-select:hover {
+    cursor: pointer;
+    background-color: #f2f2f2;
+}
+.school-name {
+    all: unset;
+    background-color: #ffffff;
+    width: 200px;
+    height: 25px;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 5px;
+}
+.school-name:hover {
+    background-color: #f2f2f2;
+}
+.Major-name {
+    all: unset;
+    background-color: #ffffff;
+    width: 200px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.Major-name:hover {
+    background-color: #f2f2f2;
+}
+.education-score {
+    all: unset;
+    background-color: #ffffff;
+    width: 30px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.education-score:hover {
+    background-color: #f2f2f2;
+}
+.perfect-score {
+    all: unset;
+    background-color: #ffffff;
+    width: 30px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.perfect-score:hover {
     background-color: #f2f2f2;
 }
