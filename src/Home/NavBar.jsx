@@ -7,10 +7,12 @@ import { useIndexedDB } from 'react-indexed-db';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import userIcon from '../image/user.png';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
     const userId = useCookies(['id'])[0].id;
     const { getByIndex } = useIndexedDB('member');
+    const navigate = useNavigate();
     const [memberInfo, setMemberInfo] = useState([]);
     const [isDropDown, setIsDropDown] = useState(false);
     useEffect(() => {
@@ -24,7 +26,12 @@ const NavBar = () => {
     }, [isDropDown]);
     return (
         <nav className="nav-bar-container">
-            <div style={{ color: '#ffffff', marginLeft: '10px' }}>CYJ's Resume Project</div>
+            <div
+                style={{ color: '#ffffff', marginLeft: '10px', cursor: 'pointer' }}
+                onClick={() => navigate('/home/appbody')}
+            >
+                CYJ's Resume Project
+            </div>
             <div className="userInfo-div">
                 <img src={userIcon} style={{ marginRight: '5px' }} />
                 <div className="user-nick" onClick={() => setIsDropDown(!isDropDown)}>
