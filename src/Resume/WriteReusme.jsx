@@ -6,9 +6,13 @@ import ResumeLeft from './ResumeLeft';
 import ResumeArticle from './ResumeArticle';
 import ResumeRight from './ResumeRight';
 import ResumeFooter from './ResumeFooter';
+import { useOutletContext } from 'react-router-dom';
+import { useIndexedDB } from 'react-indexed-db';
 
 const WriteResume = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const { memberInfo } = useOutletContext();
+    const { add } = useIndexedDB('resume');
 
     useEffect(() => {
         setIsLoading(true);
@@ -18,18 +22,24 @@ const WriteResume = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const saveButton = (data) => {
+        add({ id: memberInfo.id, resumeData: data }).then(() => {
+            alert('이력서 작성 완료!');
+        });
+    };
+
     if (isLoading) {
         return <Loading />;
     } else {
         return (
             <div className="write-resume-container">
                 <div className="container-main">
-                    <asied style={{ width: '20%' }}>
+                    <aside style={{ width: '20%' }}>
                         <ResumeLeft />
-                    </asied>
+                    </aside>
                     <main style={{ width: '60%' }}>
                         <article style={{ width: '100%' }}>
-                            <ResumeArticle />
+                            <ResumeArticle saveButton={saveButton} />
                         </article>
                     </main>
                     <aside style={{ width: '20%' }}>

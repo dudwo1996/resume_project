@@ -4,18 +4,27 @@ import './Home.css';
 import { useEffect } from 'react';
 import NavBar from './NavBar';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import { useIndexedDB } from 'react-indexed-db';
+import { useState } from 'react';
 
 const Home = () => {
     const navigate = useNavigate();
+    const userId = useCookies(['id'])[0].id;
+    const { getByIndex } = useIndexedDB('member');
+    const [memberInfo, setMemberInfo] = useState([]);
 
     useEffect(() => {
         navigate('/home/appbody');
+        getByIndex('id', userId).then((data) => {
+            setMemberInfo(data);
+        });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <div className="home-container">
-            <NavBar />
+            <NavBar memberInfo={memberInfo} />
             <div
                 style={{
                     display: 'flex',
@@ -25,7 +34,7 @@ const Home = () => {
                     alignItems: 'center',
                 }}
             >
-                <Outlet />
+                <Outlet context={{ memberInfo }} />
             </div>
         </div>
     );

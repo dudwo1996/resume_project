@@ -2,12 +2,7 @@
 import React from 'react';
 import './ResumeFooter.css';
 const ResumeFooter = () => {
-    return (
-        <div>
-            <button>임시 저장</button>
-            <button>작성 완료</button>
-        </div>
-    );
+    return <div className="footer-container">footer</div>;
 };
 
 export default ResumeFooter;
