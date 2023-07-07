@@ -7,6 +7,7 @@ import Intro from './Sign/Intro';
 import Home from './Home/Home';
 import WriteResume from './Resume/WriteReusme';
 import AppBody from './Home/AppBody';
+import MyResume from './Resume/MyResume';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                         <Route path="/home" element={<Home />}>
                             <Route path="/home/appbody" element={<AppBody />} />
                             <Route path="/home/writeresume" element={<WriteResume />} />
+                            <Route path="/home/myresume" element={<MyResume />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>

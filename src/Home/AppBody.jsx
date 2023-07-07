@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './AppBody.css';
 import addResumeIcon from '../image/edit.png';
+import myResumeIcon from '../image/my_resume.png';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import Loading from '../Loding/Loading';
@@ -14,6 +15,10 @@ const AppBody = () => {
 
     const toWriteResume = () => {
         navigate('/home/writeresume');
+    };
+
+    const toMyResume = () => {
+        navigate('/home/myresume');
     };
 
     const logOut = async () => {
@@ -51,6 +56,9 @@ const AppBody = () => {
             <div className="AppBody-container">
                 <div className="add-resume-img" onClick={toWriteResume}>
                     <img src={addResumeIcon} />
+                </div>
+                <div className="my-resume-img" onClick={toMyResume}>
+                    <img src={myResumeIcon} />
                 </div>
             </div>
         );

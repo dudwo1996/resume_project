@@ -1,8 +1,17 @@
 .AppBody-container {
     background: #f2f2f2;
+    display: flex;
 }
 .add-resume-img {
     border-radius: 10px;
+    margin: 30px;
+}
+.my-resume-img {
+    border-radius: 10px;
+    margin: 30px;
+}
+.my-resume-img:hover {
+    cursor: pointer;
 }
 
 .add-resume-img:hover {
@@ -12,6 +21,10 @@
 }
 
 .add-resume-img img:hover {
+    transform: scale();
+    animation: motion 0.4s linear 0s infinite alternate;
+}
+.my-resume-img img:hover {
     transform: scale();
     animation: motion 0.4s linear 0s infinite alternate;
 }

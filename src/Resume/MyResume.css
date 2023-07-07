@@ -1,0 +1,23 @@
+.my-resume-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 10px;
+    border: 3px solid hsl(209, 70%, 60%);
+    border-radius: 10px;
+}
+.mapping-resume {
+    list-style: none;
+    width: 95px;
+    height: 95px;
+    padding: 10px;
+    margin: 10px;
+    /* border: 1px solid rgb(176, 176, 176); */
+    border-radius: 15px;
+    cursor: pointer;
+}
+.mapping-resume-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
