@@ -27,6 +27,7 @@ const MyResume = () => {
         getByIndex('id', userId).then((data) => {
             setResumeList(data.resumeData);
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     if (isLoading) {
         return <Loading />;
