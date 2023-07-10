@@ -7,6 +7,15 @@ import emailIcon from '../image/email.png';
 import githubIcon from '../image/github.png';
 import blogIcon from '../image/blogger.png';
 import notionIcon from '../image/notion-icon.png';
+import personInfoIcon from '../image/businessman.png';
+import graduationIcon from '../image/graduation-icon.png';
+import careerIcon from '../image/building.png';
+import projectIcon from '../image/laptop.png';
+import educationIcon from '../image/classroom.png';
+import linkIcon from '../image/link.png';
+import introSelfIcon from '../image/presentation.png';
+import personIcon from '../image/person.png';
+
 const ResumeArticle = (props) => {
     const { saveButton } = props;
     const [resumeTitle, setResumeTItle] = useState('');
@@ -60,14 +69,15 @@ const ResumeArticle = (props) => {
                     onChange={(e) => setResumeTItle(e.target.value)}
                 />
             </div>
-            <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>기본 정보</h4>
+            <div style={{ display: 'flex', alignItems: 'center', width: '75%', margin: 'auto', marginBottom: '15px' }}>
+                <img src={personInfoIcon} />
+                <span>기본 정보</span>
             </div>
             <div className="resume-profile-div">
                 <div className="profile-image-div">
                     <input id="profile-image-input" className="profile-image" type="file" />
                     <label className="image-input-label" htmlFor="profile-image-input">
-                        사진
+                        <img src={personIcon} alt="" style={{ width: '100px', height: '100px' }} />
                     </label>
                 </div>
                 <div className="user-info-div">
@@ -112,8 +122,9 @@ const ResumeArticle = (props) => {
                     </div>
                 </div>
             </div>
-            <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>최종 학력</h4>
+            <div style={{ display: 'flex', alignItems: 'center', width: '75%', margin: 'auto', marginBottom: '15px' }}>
+                <img src={graduationIcon} />
+                <span>최종 학력</span>
             </div>
             <div className="education-div">
                 <div
@@ -181,8 +192,10 @@ const ResumeArticle = (props) => {
                     </div>
                 </div>
             </div>
-            <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>경력</h4>
+            <div style={{ display: 'flex', alignItems: 'center', width: '75%', margin: 'auto', marginBottom: '15px' }}>
+                <img src={careerIcon} />
+
+                <span>경력</span>
             </div>
             <div className="career-div">
                 <div
@@ -248,8 +261,10 @@ const ResumeArticle = (props) => {
                     ></div>
                 </div>
             </div>
-            <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>프로젝트</h4>
+            <div style={{ display: 'flex', alignItems: 'center', width: '75%', margin: 'auto', marginBottom: '15px' }}>
+                <img src={projectIcon} />
+
+                <span>프로젝트</span>
             </div>
             <div className="project-div">
                 <div
@@ -315,8 +330,10 @@ const ResumeArticle = (props) => {
                     ></div>
                 </div>
             </div>
-            <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>교육 이력</h4>
+            <div style={{ display: 'flex', alignItems: 'center', width: '75%', margin: 'auto', marginBottom: '15px' }}>
+                <img src={educationIcon} />
+
+                <span>교육 이력</span>
             </div>
             <div className="project-div">
                 <div
@@ -382,13 +399,15 @@ const ResumeArticle = (props) => {
                     ></div>
                 </div>
             </div>
-            <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>링크</h4>
+            <div style={{ display: 'flex', alignItems: 'center', width: '75%', margin: 'auto', marginBottom: '15px' }}>
+                <img src={linkIcon} />
+
+                <span>링크</span>
             </div>
             <div className="link-div">
                 <div className="github-link">
                     <img src={githubIcon} style={{ width: '32px', height: '32px' }} />
-                    <div style={{ marginLeft: '20px' }}>
+                    <div style={{ marginLeft: '15px' }}>
                         <div style={{ textAlign: 'left' }}>Github</div>
                         <input
                             type="text"
@@ -399,7 +418,7 @@ const ResumeArticle = (props) => {
                 </div>
                 <div className="notion-link">
                     <img src={notionIcon} style={{ width: '32px', height: '32px' }} />
-                    <div style={{ marginLeft: '20px' }}>
+                    <div style={{ marginLeft: '15px' }}>
                         <div style={{ textAlign: 'left' }}>Notion</div>
                         <input
                             type="text"
@@ -410,7 +429,7 @@ const ResumeArticle = (props) => {
                 </div>
                 <div className="blog-link">
                     <img src={blogIcon} style={{ width: '32px', height: '32px' }} />
-                    <div style={{ marginLeft: '20px' }}>
+                    <div style={{ marginLeft: '15px' }}>
                         <div style={{ textAlign: 'left' }}>Blog</div>
                         <input
                             type="text"
@@ -420,8 +439,9 @@ const ResumeArticle = (props) => {
                     </div>
                 </div>
             </div>
-            <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>자기소개서</h4>
+            <div style={{ display: 'flex', alignItems: 'center', width: '75%', margin: 'auto', marginBottom: '15px' }}>
+                <img src={introSelfIcon} />
+                <span>자기소개서</span>
             </div>
             <div className="cover-letter-div">
                 <input
