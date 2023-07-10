@@ -8,6 +8,7 @@ import Home from './Home/Home';
 import WriteResume from './Resume/WriteReusme';
 import AppBody from './Home/AppBody';
 import MyResume from './Resume/MyResume';
+import MyResumeDetail from './Resume/MyResumeDetail';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                             <Route path="/home/appbody" element={<AppBody />} />
                             <Route path="/home/writeresume" element={<WriteResume />} />
                             <Route path="/home/myresume" element={<MyResume />} />
+                            <Route path="/home/myresume/myresumedetail" element={<MyResumeDetail />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>

@@ -113,7 +113,7 @@ const ResumeArticle = (props) => {
                 </div>
             </div>
             <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>학력</h4>
+                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>최종 학력</h4>
             </div>
             <div className="education-div">
                 <div
@@ -177,44 +177,6 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="4.5"
                             onChange={(e) => setPerfectScore(e.target.value)}
-                        />
-                    </div>
-                </div>
-            </div>
-            <div style={{ width: '70%', margin: 'auto' }}>
-                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>링크</h4>
-            </div>
-            <div className="link-div">
-                <div className="github-link">
-                    <img src={githubIcon} style={{ width: '32px', height: '32px' }} />
-                    <div style={{ marginLeft: '20px' }}>
-                        <div style={{ textAlign: 'left' }}>Github</div>
-                        <input
-                            type="text"
-                            placeholder="https://github.com"
-                            onChange={(e) => setGitgubLink(e.target.value)}
-                        />
-                    </div>
-                </div>
-                <div className="notion-link">
-                    <img src={notionIcon} style={{ width: '32px', height: '32px' }} />
-                    <div style={{ marginLeft: '20px' }}>
-                        <div style={{ textAlign: 'left' }}>Notion</div>
-                        <input
-                            type="text"
-                            placeholder="https://notion.so"
-                            onChange={(e) => setNotionLink(e.target.value)}
-                        />
-                    </div>
-                </div>
-                <div className="blog-link">
-                    <img src={blogIcon} style={{ width: '32px', height: '32px' }} />
-                    <div style={{ marginLeft: '20px' }}>
-                        <div style={{ textAlign: 'left' }}>Blog</div>
-                        <input
-                            type="text"
-                            placeholder="https:// 또는 http://를 포함해서 작성하세요."
-                            onChange={(e) => setBlogLink(e.target.value)}
                         />
                     </div>
                 </div>
@@ -418,6 +380,44 @@ const ResumeArticle = (props) => {
                         placeholder="상세내용을 작성해주세요"
                         onChange={(e) => setEducationMainBusiness(e.target.value)}
                     ></div>
+                </div>
+            </div>
+            <div style={{ width: '70%', margin: 'auto' }}>
+                <h4 style={{ textAlign: 'left', marginBottom: '0' }}>링크</h4>
+            </div>
+            <div className="link-div">
+                <div className="github-link">
+                    <img src={githubIcon} style={{ width: '32px', height: '32px' }} />
+                    <div style={{ marginLeft: '20px' }}>
+                        <div style={{ textAlign: 'left' }}>Github</div>
+                        <input
+                            type="text"
+                            placeholder="https://github.com"
+                            onChange={(e) => setGitgubLink(e.target.value)}
+                        />
+                    </div>
+                </div>
+                <div className="notion-link">
+                    <img src={notionIcon} style={{ width: '32px', height: '32px' }} />
+                    <div style={{ marginLeft: '20px' }}>
+                        <div style={{ textAlign: 'left' }}>Notion</div>
+                        <input
+                            type="text"
+                            placeholder="https://notion.so"
+                            onChange={(e) => setNotionLink(e.target.value)}
+                        />
+                    </div>
+                </div>
+                <div className="blog-link">
+                    <img src={blogIcon} style={{ width: '32px', height: '32px' }} />
+                    <div style={{ marginLeft: '20px' }}>
+                        <div style={{ textAlign: 'left' }}>Blog</div>
+                        <input
+                            type="text"
+                            placeholder="https:// 또는 http://를 포함해서 작성하세요."
+                            onChange={(e) => setBlogLink(e.target.value)}
+                        />
+                    </div>
                 </div>
             </div>
             <div style={{ width: '70%', margin: 'auto' }}>

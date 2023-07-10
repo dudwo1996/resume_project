@@ -19,6 +19,10 @@ const MyResume = () => {
         navigate('/home/writeresume');
     };
 
+    const toResumeDetail = (resumeData) => {
+        navigate('/home/myresume/myresumedetail', { state: resumeData });
+    };
+
     useEffect(() => {
         setIsLoading(true);
         setTimeout(() => {
@@ -33,12 +37,17 @@ const MyResume = () => {
         return <Loading />;
     } else {
         return (
-            <div>
+            <div style={{ height: '100%' }}>
                 <span style={{ fontSize: '30px', fontWeight: '800' }}>나의 이력서</span>
                 <div className="my-resume-container">
                     {resumeList.map((resume, idx) => {
                         return (
-                            <ul title={resume.resumeTitle} className="mapping-resume" key={idx}>
+                            <ul
+                                title={resume.resumeTitle}
+                                className="mapping-resume"
+                                key={idx}
+                                onClick={() => toResumeDetail(resume)}
+                            >
                                 <li>
                                     <img src={resumeIcon} style={{ marginBottom: '5px' }} />
                                     <div className="mapping-resume-title">{resume.resumeTitle}</div>
