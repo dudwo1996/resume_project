@@ -33,7 +33,14 @@
 .resume-title-box:focus {
     outline: none;
 }
-
+.sub-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 15px;
+}
 .resume-profile-div {
     display: flex;
     justify-content: space-evenly;
@@ -47,8 +54,8 @@
     padding: 20px;
 }
 .profile-image-div {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +70,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 90%;
+    height: 100%;
     background-color: #ffffff;
     border-radius: 10px;
 }
