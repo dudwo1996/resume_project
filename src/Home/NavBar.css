@@ -8,15 +8,39 @@
     background-color: hsl(209, 70%, 60%);
 }
 .userInfo-div {
+    margin-right: 30px;
+}
+.unser-info-button {
+    all: unset;
+    cursor: pointer;
     display: flex;
-    margin-right: 10px;
-    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    font-weight: 800;
+}
+.unser-info-button:focus {
+    outline: none;
 }
 .user-nick {
+    all: unset;
     cursor: pointer;
-    font-size: 16px;
-}
-.user-nick:hover {
     font-size: 18px;
-    transition: 300ms;
+    font-weight: 800;
+}
+.menu-list {
+    width: 90px;
+    height: 25px;
+    padding: unset;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+}
+.menu-list:hover {
+    background-color: hsl(209, 84%, 75%);
+    color: #ffffff;
+    border: none;
+}
+.menu-list:focus {
+    outline: none;
 }

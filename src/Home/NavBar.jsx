@@ -1,15 +1,43 @@
 /* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState } from 'react';
 import './NavBar.css';
-import { useState } from 'react';
 import userIcon from '../image/user.png';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import { useEffect } from 'react';
 
 const NavBar = (props) => {
     const navigate = useNavigate();
-    const [isDropDown, setIsDropDown] = useState(false);
+    const [isList, setIsList] = useState(false);
     const { memberInfo } = props;
+    // eslint-disable-next-line no-unused-vars
+    const [cookies, removeCookie] = useCookies(['id']);
+
+    const logOut = async () => {
+        await removeCookie('id');
+        await navigate('/signin');
+    };
+    const handleEvent = () => {
+        history.pushState(null, '', location.href);
+        if (confirm('로그아웃 하시겠습니까?')) {
+            logOut();
+        } else {
+            return;
+        }
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (event.target.closest('.userInfo-div') === null) {
+                setIsList(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
     return (
         <nav className="nav-bar-container">
             <div
@@ -18,14 +46,16 @@ const NavBar = (props) => {
             >
                 CYJ's Resume Project
             </div>
-            <div className="userInfo-div">
-                <img src={userIcon} style={{ marginRight: '5px' }} />
-                <div className="user-nick" onClick={() => setIsDropDown(!isDropDown)}>
-                    {memberInfo.nickname}
+            <div className="userInfo-div" onClick={() => setIsList(!isList)}>
+                <div style={{ display: 'flex' }}>
+                    <img src={userIcon} />
+                    <button className="unser-info-button">{memberInfo.nickname}</button>
                 </div>
-                {/* <div className="dropdown" style={isDropDown ? { display: 'block' } : { display: 'none' }}>
-                    <div className="dropdown-item">로그아웃</div>
-                </div> */}
+                {isList ? (
+                    <button className="menu-list" onClick={handleEvent}>
+                        로그아웃
+                    </button>
+                ) : null}
             </div>
         </nav>
     );
