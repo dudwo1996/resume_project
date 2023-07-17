@@ -72,15 +72,11 @@ const ResumeArticle = (props) => {
     const changeImage = (files) => {
         const file = files[0];
         var reader = new FileReader();
-        reader.onload = function (e) {
-            var arrayBUffer = e.target.result;
-            var blob = new Blob([arrayBUffer], {
-                type: 'image/png',
-            });
-            const url = URL.createObjectURL(blob);
-            setImageData(url);
+        reader.onload = function () {
+            var base64data = reader.result;
+            setImageData(base64data);
         };
-        reader.readAsArrayBuffer(file);
+        reader.readAsDataURL(file);
     };
 
     const checkboxOncahnge = (value) => {
@@ -612,6 +608,13 @@ const ResumeArticle = (props) => {
                                 educationMainBusiness,
                                 selfIntroName,
                                 selfIntroDetail,
+                                isCareer,
+                                isEducation,
+                                isIntroSelf,
+                                isLastDegree,
+                                isLink,
+                                isProfile,
+                                isProject,
                             },
                         ])
                     }
