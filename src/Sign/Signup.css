@@ -1,7 +1,11 @@
 .signup-container {
     text-align: left;
     width: 400px;
+    height: 115vh;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .signup-logo {
     text-align: center;

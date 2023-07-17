@@ -4,7 +4,7 @@ import React from 'react';
 
 const Loading = () => {
     return (
-        <h1>
+        <div className="loading-div">
             <span>r</span>
             <span>e</span>
             <span>s</span>
@@ -19,7 +19,7 @@ const Loading = () => {
             <span>e</span>
             <span>c</span>
             <span>t</span>
-        </h1>
+        </div>
     );
 };
 

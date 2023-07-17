@@ -15,7 +15,7 @@ const NavBar = (props) => {
     const [cookies, removeCookie] = useCookies(['id']);
 
     const logOut = async () => {
-        await removeCookie('id');
+        await removeCookie('id', { Path2D: '/' });
         await navigate('/signin');
     };
     const handleEvent = () => {
