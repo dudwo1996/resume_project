@@ -1,5 +1,5 @@
 const ResumeRight = () => {
-    return <div>Right</div>;
+    // return <div>Right</div>;
 };
 
 export default ResumeRight;

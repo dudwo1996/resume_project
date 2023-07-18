@@ -36,11 +36,22 @@
     top: 45px;
     right: 10px;
 }
-.menu-list:hover {
+.menu-list:hover,
+.menu-list2:hover {
     background-color: hsl(209, 84%, 75%);
     color: #ffffff;
     border: none;
 }
-.menu-list:focus {
+.menu-list:focus,
+.menu-list2:focus {
     outline: none;
+}
+
+.menu-list2 {
+    width: 90px;
+    height: 25px;
+    padding: unset;
+    position: absolute;
+    top: 70px;
+    right: 10px;
 }

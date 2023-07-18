@@ -2,7 +2,7 @@
 import React from 'react';
 import './ResumeFooter.css';
 const ResumeFooter = () => {
-    return <div className="footer-container">footer</div>;
+    // return <div className="footer-container">footer</div>;
 };
 
 export default ResumeFooter;
