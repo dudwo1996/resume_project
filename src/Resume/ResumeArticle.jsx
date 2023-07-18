@@ -16,9 +16,11 @@ import linkIcon from '../image/link.png';
 import introSelfIcon from '../image/presentation.png';
 import personIcon from '../image/person.png';
 import { Checkbox } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const ResumeArticle = (props) => {
     const { saveButton } = props;
+    const navigate = useNavigate();
     const [resumeTitle, setResumeTItle] = useState('');
     const [imageData, setImageData] = useState('');
     const [userName, setUserName] = useState('');
@@ -103,6 +105,14 @@ const ResumeArticle = (props) => {
         }
         if (value === 'isIntroSelf') {
             setIsIntroSelf(!isIntroSelf);
+        }
+    };
+
+    const goBack = () => {
+        if (confirm('작성한 내용이 사라집니다. 뒤로 가시겠습니까?')) {
+            navigate(-1);
+        } else {
+            return;
         }
     };
 
@@ -561,6 +571,9 @@ const ResumeArticle = (props) => {
                 </div>
             ) : null}
             <div>
+                <button className="save-button" onClick={goBack}>
+                    뒤로가기
+                </button>
                 <button
                     className="save-button"
                     onClick={() =>
