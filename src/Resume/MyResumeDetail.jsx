@@ -15,11 +15,25 @@ import educationIcon from '../image/classroom.png';
 import linkIcon from '../image/link.png';
 import introSelfIcon from '../image/presentation.png';
 import './MyResumeDetail.css';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useIndexedDB } from 'react-indexed-db';
+import { useCookies } from 'react-cookie';
 
 const MyResumeDetail = () => {
     const { state } = useLocation();
-    console.log(state);
+    const { update, getAll } = useIndexedDB('resume');
+    const userId = useCookies(['id'])[0].id;
+    const navigate = useNavigate();
+
+    const deleteResume = async () => {
+        const getAllRes = await getAll();
+        const selectedData = getAllRes.filter((x) => x.id === userId);
+        const newData = selectedData[0].resumeData.filter((x) => x.resumeTitle !== state.resumeTitle);
+        selectedData[0].resumeData = newData;
+        update({ id: selectedData[0].id, resumeData: selectedData[0].resumeData });
+        alert('해당 이력서가 삭제되었습니다.');
+        navigate('/home/myresume');
+    };
     return (
         <div className="my-resume-detail-container">
             <div className="my-resume-detail-title">{state.resumeTitle}</div>
@@ -255,6 +269,10 @@ const MyResumeDetail = () => {
                     </div>
                 </>
             ) : null}
+            <div>
+                <button>수정</button>
+                <button onClick={deleteResume}>삭제</button>
+            </div>
         </div>
     );
 };

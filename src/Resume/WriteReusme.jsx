@@ -6,13 +6,16 @@ import ResumeLeft from './ResumeLeft';
 import ResumeArticle from './ResumeArticle';
 import ResumeRight from './ResumeRight';
 import ResumeFooter from './ResumeFooter';
-import { useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { useIndexedDB } from 'react-indexed-db';
+import { useCookies } from 'react-cookie';
 
 const WriteResume = () => {
     const [isLoading, setIsLoading] = useState(false);
     const { memberInfo } = useOutletContext();
-    const { add } = useIndexedDB('resume');
+    const { add, getAll, update } = useIndexedDB('resume');
+    const userId = useCookies(['id'])[0].id;
+    const navigate = useNavigate();
 
     useEffect(() => {
         setIsLoading(true);
@@ -22,10 +25,20 @@ const WriteResume = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const saveButton = (data) => {
-        add({ id: memberInfo.id, resumeData: data }).then(() => {
+    const saveButton = async (data) => {
+        const getAllRes = await getAll();
+        const resumeData = getAllRes.filter((x) => x.id === userId);
+        if (resumeData.length !== 0) {
+            resumeData[0].resumeData.push(data);
+            update({ id: resumeData[0].id, resumeData: resumeData[0].resumeData });
             alert('이력서 작성 완료!');
-        });
+            navigate('/home/myresume');
+        } else {
+            add({ id: memberInfo.id, resumeData: [data] }).then(() => {
+                alert('이력서 작성 완료!');
+                navigate('/home/myresume');
+            });
+        }
     };
 
     if (isLoading) {

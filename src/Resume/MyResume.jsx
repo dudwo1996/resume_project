@@ -14,7 +14,6 @@ const MyResume = () => {
     const { getByIndex } = useIndexedDB('resume');
     const [isLoading, setIsLoading] = useState(false);
     const [resumeList, setResumeList] = useState([]);
-
     const toWriteResume = () => {
         navigate('/home/writeresume');
     };
