@@ -9,6 +9,7 @@ import ResumeFooter from './ResumeFooter';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import { useIndexedDB } from 'react-indexed-db';
 import { useCookies } from 'react-cookie';
+import { v4 as uuidv4 } from 'uuid';
 
 const WriteResume = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -28,6 +29,8 @@ const WriteResume = () => {
     const saveButton = async (data) => {
         const getAllRes = await getAll();
         const resumeData = getAllRes.filter((x) => x.id === userId);
+        const resumeId = uuidv4();
+        data.resumeId = resumeId;
         if (resumeData.length !== 0) {
             resumeData[0].resumeData.push(data);
             update({ id: resumeData[0].id, resumeData: resumeData[0].resumeData });
@@ -41,6 +44,15 @@ const WriteResume = () => {
         }
     };
 
+    const editButton = async (data) => {
+        const getAllRes = await getAll();
+        const resumeData = await getAllRes.filter((x) => x.id === userId);
+        const deleteResume = await resumeData[0].resumeData.filter((resume) => resume.resumeId !== data.resumeId);
+        await deleteResume.push(data);
+        update({ id: resumeData[0].id, resumeData: deleteResume });
+        navigate('/home/myresume');
+    };
+
     if (isLoading) {
         return <Loading />;
     } else {
@@ -52,7 +64,7 @@ const WriteResume = () => {
                     </aside>
                     <main style={{ width: '60%' }}>
                         <article style={{ width: '100%' }}>
-                            <ResumeArticle saveButton={saveButton} />
+                            <ResumeArticle saveButton={saveButton} editButton={editButton} />
                         </article>
                     </main>
                     <aside style={{ width: '20%' }}>

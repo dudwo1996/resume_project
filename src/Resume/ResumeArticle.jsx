@@ -16,61 +16,63 @@ import linkIcon from '../image/link.png';
 import introSelfIcon from '../image/presentation.png';
 import personIcon from '../image/person.png';
 import { Checkbox } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ResumeArticle = (props) => {
-    const { saveButton } = props;
+    const { saveButton, editButton } = props;
+    const { state } = useLocation();
     const navigate = useNavigate();
-    const [resumeTitle, setResumeTItle] = useState('');
-    const [imageData, setImageData] = useState('');
-    const [userName, setUserName] = useState('');
-    const [userBirth, setUserBirth] = useState('');
-    const [userPhoneNum, setUserPhoneNum] = useState('');
-    const [userEmail, setUserEmail] = useState('');
-    const [graduationDayY, setGraduationDayY] = useState('');
-    const [graduationDayM, setGraduationDayM] = useState('');
-    const [highLevel, setHighLevel] = useState('');
-    const [schoolName, setSchoolName] = useState('');
-    const [major, setMajor] = useState('');
-    const [score, setScore] = useState('');
-    const [perfectScore, setPerfectScore] = useState('');
-    const [githubLink, setGitgubLink] = useState('');
-    const [notionLink, setNotionLink] = useState('');
-    const [blogLink, setBlogLink] = useState('');
-    const [careerStartY, setCareerStartY] = useState('');
-    const [careerStartM, setCareerStartM] = useState('');
-    const [careerEndY, setCareerEndY] = useState('');
-    const [careerEndM, setCareerEndM] = useState('');
-    const [companyName, setCompanyName] = useState('');
-    const [companyExplain, setCompanyExplain] = useState('');
-    const [companyPosition, setCompanyPosition] = useState('');
-    const [companyMainBusiness, setCompanyMainBusiness] = useState('');
-    const [projectStartY, setProjectStartY] = useState('');
-    const [projectStartM, setProjectStartM] = useState('');
-    const [projectEndY, setProjectEndY] = useState('');
-    const [projectEndM, setProjectEndM] = useState('');
-    const [projectName, setProjectName] = useState('');
-    const [projectExplain, setProjectExplain] = useState('');
-    const [projectPosition, setProjectPosition] = useState('');
-    const [projectMainBusiness, setProjectMainBusiness] = useState('');
-    const [educationStartY, setEducationStartY] = useState('');
-    const [educationStartM, setEducationStartM] = useState('');
-    const [educationEndY, setEducationEndY] = useState('');
-    const [educationEndM, setEducationEndM] = useState('');
-    const [educationName, setEducationName] = useState('');
-    const [educationExplain, setEducationExplain] = useState('');
-    const [educationPosition, setEducationPosition] = useState('');
-    const [educationMainBusiness, setEducationMainBusiness] = useState('');
-    const [selfIntroName, setSelfIntroName] = useState('');
-    const [selfIntroDetail, setSelfIntroDetail] = useState('');
-    const [isProfile, setIsProfile] = useState(true);
-    const [isLastDegree, setIsLastDegree] = useState(true);
-    const [isCareer, setIsCareer] = useState(true);
-    const [isProject, setIsProject] = useState(true);
-    const [isEducation, setIsEducation] = useState(true);
-    const [isLink, setIsLink] = useState(true);
-    const [isIntroSelf, setIsIntroSelf] = useState(true);
-
+    // eslint-disable-next-line no-unused-vars
+    const [resumeId, setResumeId] = useState(state?.resumeId || '');
+    const [resumeTitle, setResumeTItle] = useState(state?.resumeTitle || '');
+    const [imageData, setImageData] = useState(state?.imageData || '');
+    const [userName, setUserName] = useState(state?.userName || '');
+    const [userBirth, setUserBirth] = useState(state?.userBirth || '');
+    const [userPhoneNum, setUserPhoneNum] = useState(state?.userPhoneNum || '');
+    const [userEmail, setUserEmail] = useState(state?.userEmail || '');
+    const [graduationDayY, setGraduationDayY] = useState(state?.graduationDayY || '');
+    const [graduationDayM, setGraduationDayM] = useState(state?.graduationDayM || '');
+    const [highLevel, setHighLevel] = useState(state?.highLevel || '');
+    const [schoolName, setSchoolName] = useState(state?.schoolName || '');
+    const [major, setMajor] = useState(state?.major || '');
+    const [score, setScore] = useState(state?.score || '');
+    const [perfectScore, setPerfectScore] = useState(state?.perfectScore || '');
+    const [githubLink, setGitgubLink] = useState(state?.githubLink || '');
+    const [notionLink, setNotionLink] = useState(state?.notionLink || '');
+    const [blogLink, setBlogLink] = useState(state?.blogLink || '');
+    const [careerStartY, setCareerStartY] = useState(state?.careerStartY || '');
+    const [careerStartM, setCareerStartM] = useState(state?.careerStartM || '');
+    const [careerEndY, setCareerEndY] = useState(state?.careerEndY || '');
+    const [careerEndM, setCareerEndM] = useState(state?.careerEndM || '');
+    const [companyName, setCompanyName] = useState(state?.companyName || '');
+    const [companyExplain, setCompanyExplain] = useState(state?.companyExplain || '');
+    const [companyPosition, setCompanyPosition] = useState(state?.companyPosition || '');
+    const [companyMainBusiness, setCompanyMainBusiness] = useState(state?.companyMainBusiness || '');
+    const [projectStartY, setProjectStartY] = useState(state?.projectStartY || '');
+    const [projectStartM, setProjectStartM] = useState(state?.projectStartM || '');
+    const [projectEndY, setProjectEndY] = useState(state?.projectEndY || '');
+    const [projectEndM, setProjectEndM] = useState(state?.projectEndM || '');
+    const [projectName, setProjectName] = useState(state?.projectName || '');
+    const [projectExplain, setProjectExplain] = useState(state?.projectExplain || '');
+    const [projectPosition, setProjectPosition] = useState(state?.projectPosition || '');
+    const [projectMainBusiness, setProjectMainBusiness] = useState(state?.projectMainBusiness || '');
+    const [educationStartY, setEducationStartY] = useState(state?.educationStartY || '');
+    const [educationStartM, setEducationStartM] = useState(state?.educationStartM || '');
+    const [educationEndY, setEducationEndY] = useState(state?.educationEndY || '');
+    const [educationEndM, setEducationEndM] = useState(state?.educationEndM || '');
+    const [educationName, setEducationName] = useState(state?.educationName || '');
+    const [educationExplain, setEducationExplain] = useState(state?.educationExplain || '');
+    const [educationPosition, setEducationPosition] = useState(state?.educationPosition || '');
+    const [educationMainBusiness, setEducationMainBusiness] = useState(state?.educationMainBusiness || '');
+    const [selfIntroName, setSelfIntroName] = useState(state?.selfIntroName || '');
+    const [selfIntroDetail, setSelfIntroDetail] = useState(state?.selfIntroDetail || '');
+    const [isProfile, setIsProfile] = useState(state?.isProfile || true);
+    const [isLastDegree, setIsLastDegree] = useState(state?.isLastDegree || true);
+    const [isCareer, setIsCareer] = useState(state?.isCareer || true);
+    const [isProject, setIsProject] = useState(state?.isProject || true);
+    const [isEducation, setIsEducation] = useState(state?.isEducation || true);
+    const [isLink, setIsLink] = useState(state?.isLink || true);
+    const [isIntroSelf, setIsIntroSelf] = useState(state?.isIntroSelf || true);
     const changeImage = (files) => {
         const file = files[0];
         var reader = new FileReader();
@@ -123,6 +125,7 @@ const ResumeArticle = (props) => {
                     className="resume-title-box"
                     placeholder="자기만의 이력서 제목을 작성해주세요."
                     onChange={(e) => setResumeTItle(e.target.value)}
+                    value={resumeTitle}
                 />
             </div>
             <div className="sub-title">
@@ -160,6 +163,7 @@ const ResumeArticle = (props) => {
                                 className="user-name"
                                 placeholder="이름"
                                 onChange={(e) => setUserName(e.target.value)}
+                                value={userName}
                             />
                         </div>
                         <div>
@@ -170,6 +174,7 @@ const ResumeArticle = (props) => {
                                     className="user-birth"
                                     placeholder="생년월일"
                                     onChange={(e) => setUserBirth(e.target.value)}
+                                    value={userBirth}
                                 />
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
@@ -180,6 +185,7 @@ const ResumeArticle = (props) => {
                                     className="user-phone-num"
                                     placeholder="연락처"
                                     onChange={(e) => setUserPhoneNum(e.target.value)}
+                                    value={userPhoneNum}
                                 />
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
@@ -190,6 +196,7 @@ const ResumeArticle = (props) => {
                                     className="user-email"
                                     placeholder="이메일"
                                     onChange={(e) => setUserEmail(e.target.value)}
+                                    value={userEmail}
                                 />
                             </div>
                         </div>
@@ -222,6 +229,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="YYYY"
                             onChange={(e) => setGraduationDayY(e.target.value)}
+                            value={graduationDayY}
                         />
                         <span>.</span>
                         <input
@@ -229,6 +237,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="MM"
                             onChange={(e) => setGraduationDayM(e.target.value)}
+                            value={graduationDayM}
                         />
                         <span style={{ height: '19px', fontSize: '14px' }}>졸업(예정)</span>
                     </div>
@@ -237,6 +246,7 @@ const ResumeArticle = (props) => {
                             className="education-select"
                             placeholder="학력 구분"
                             onChange={(e) => setHighLevel(e.target.value)}
+                            value={highLevel}
                         >
                             <option value="highSchool">고등학교</option>
                             <option value="juniorCollege">대학(2,3년)</option>
@@ -250,6 +260,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="학교명을 작성해주세요."
                             onChange={(e) => setSchoolName(e.target.value)}
+                            value={schoolName}
                         />
                         <div>
                             <input
@@ -257,12 +268,14 @@ const ResumeArticle = (props) => {
                                 type="text"
                                 placeholder="학과명을 작성해주세요."
                                 onChange={(e) => setMajor(e.target.value)}
+                                value={major}
                             />
                             <input
                                 className="education-score"
                                 type="text"
                                 placeholder="학점"
                                 onChange={(e) => setScore(e.target.value)}
+                                value={score}
                             />
                             <span>/</span>
                             <input
@@ -270,6 +283,7 @@ const ResumeArticle = (props) => {
                                 type="text"
                                 placeholder="4.5"
                                 onChange={(e) => setPerfectScore(e.target.value)}
+                                value={perfectScore}
                             />
                         </div>
                     </div>
@@ -298,6 +312,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="YYYY"
                             onChange={(e) => setCareerStartY(e.target.value)}
+                            value={careerStartY}
                         />
                         <span>.</span>
                         <input
@@ -305,6 +320,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="MM"
                             onChange={(e) => setCareerStartM(e.target.value)}
+                            value={careerStartM}
                         />
                         <span>~</span>
                         <input
@@ -312,6 +328,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="YYYY"
                             onChange={(e) => setCareerEndY(e.target.value)}
+                            value={careerEndY}
                         />
                         <span>.</span>
                         <input
@@ -319,6 +336,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="MM"
                             onChange={(e) => setCareerEndM(e.target.value)}
+                            value={careerEndM}
                         />
                     </div>
                     <div>
@@ -327,24 +345,28 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="회사명을 작성해주세요."
                             onChange={(e) => setCompanyName(e.target.value)}
+                            value={companyName}
                         />
                         <input
                             className="company-profile"
                             type="text"
                             placeholder="회사소개를 간략하게 작성해주세요."
                             onChange={(e) => setCompanyExplain(e.target.value)}
+                            value={companyExplain}
                         />
                         <input
                             className="company-position"
                             type="text"
                             placeholder="부서/직책"
                             onChange={(e) => setCompanyPosition(e.target.value)}
+                            value={companyPosition}
                         />
                         <div
                             contentEditable="true"
                             className="company-task-detail"
                             placeholder="주요 업무를 작성해주세요"
                             onChange={(e) => setCompanyMainBusiness(e.target.value)}
+                            value={companyMainBusiness}
                         ></div>
                     </div>
                 </div>
@@ -371,6 +393,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="YYYY"
                             onChange={(e) => setProjectStartY(e.target.value)}
+                            value={projectStartY}
                         />
                         <span>.</span>
                         <input
@@ -378,6 +401,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="MM"
                             onChange={(e) => setProjectStartM(e.target.value)}
+                            value={projectStartM}
                         />
                         <span>~</span>
                         <input
@@ -385,6 +409,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="YYYY"
                             onChange={(e) => setProjectEndY(e.target.value)}
+                            value={projectEndY}
                         />
                         <span>.</span>
                         <input
@@ -392,6 +417,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="MM"
                             onChange={(e) => setProjectEndM(e.target.value)}
+                            value={projectEndM}
                         />
                     </div>
                     <div>
@@ -400,24 +426,28 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="프로젝트명을 작성해주세요."
                             onChange={(e) => setProjectName(e.target.value)}
+                            value={projectName}
                         />
                         <input
                             className="company-profile"
                             type="text"
                             placeholder="프로젝트를 간략하게 작성해주세요."
                             onChange={(e) => setProjectExplain(e.target.value)}
+                            value={projectExplain}
                         />
                         <input
                             className="company-position"
                             type="text"
                             placeholder="역할 ex) 프론트엔드"
                             onChange={(e) => setProjectPosition(e.target.value)}
+                            value={projectPosition}
                         />
                         <div
                             contentEditable="true"
                             className="project-detail"
                             placeholder="프로젝트 상세내용을 작성해주세요"
                             onChange={(e) => setProjectMainBusiness(e.target.value)}
+                            value={projectMainBusiness}
                         ></div>
                     </div>
                 </div>
@@ -448,6 +478,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="YYYY"
                             onChange={(e) => setEducationStartY(e.target.value)}
+                            value={educationStartY}
                         />
                         <span>.</span>
                         <input
@@ -455,6 +486,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="MM"
                             onChange={(e) => setEducationStartM(e.target.value)}
+                            value={educationStartM}
                         />
                         <span>~</span>
                         <input
@@ -462,6 +494,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="YYYY"
                             onChange={(e) => setEducationEndY(e.target.value)}
+                            value={educationEndY}
                         />
                         <span>.</span>
                         <input
@@ -469,6 +502,7 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="MM"
                             onChange={(e) => setEducationEndM(e.target.value)}
+                            value={educationEndM}
                         />
                     </div>
                     <div>
@@ -477,24 +511,28 @@ const ResumeArticle = (props) => {
                             type="text"
                             placeholder="교육기관을 작성해주세요."
                             onChange={(e) => setEducationName(e.target.value)}
+                            value={educationName}
                         />
                         <input
                             className="company-profile"
                             type="text"
                             placeholder="교육 과정명을 작성해주세요."
                             onChange={(e) => setEducationExplain(e.target.value)}
+                            value={educationExplain}
                         />
                         <input
                             className="company-position"
                             type="text"
                             placeholder="역할 ex) 프론트엔드"
                             onChange={(e) => setEducationPosition(e.target.value)}
+                            value={educationPosition}
                         />
                         <div
                             contentEditable="true"
                             className="project-detail"
                             placeholder="상세내용을 작성해주세요"
                             onChange={(e) => setEducationMainBusiness(e.target.value)}
+                            value={educationMainBusiness}
                         ></div>
                     </div>
                 </div>
@@ -516,6 +554,7 @@ const ResumeArticle = (props) => {
                                 type="text"
                                 placeholder="https://github.com"
                                 onChange={(e) => setGitgubLink(e.target.value)}
+                                value={githubLink}
                             />
                         </div>
                     </div>
@@ -527,6 +566,7 @@ const ResumeArticle = (props) => {
                                 type="text"
                                 placeholder="https://notion.so"
                                 onChange={(e) => setNotionLink(e.target.value)}
+                                value={notionLink}
                             />
                         </div>
                     </div>
@@ -538,6 +578,7 @@ const ResumeArticle = (props) => {
                                 type="text"
                                 placeholder="https:// 또는 http://를 포함해서 작성하세요."
                                 onChange={(e) => setBlogLink(e.target.value)}
+                                value={blogLink}
                             />
                         </div>
                     </div>
@@ -561,12 +602,14 @@ const ResumeArticle = (props) => {
                         type="text"
                         placeholder="소제목을 작성해주세요."
                         onChange={(e) => setSelfIntroName(e.target.value)}
+                        value={selfIntroName}
                     />
                     <div
                         contentEditable="true"
                         className="cover-letter-detail"
                         placeholder="자기소개서 내용을 작성해주세요"
                         onChange={(e) => setSelfIntroDetail(e.target.value)}
+                        value={selfIntroDetail}
                     ></div>
                 </div>
             ) : null}
@@ -576,61 +619,116 @@ const ResumeArticle = (props) => {
                 </button>
                 <button
                     className="save-button"
-                    onClick={() =>
-                        saveButton({
-                            resumeTitle: resumeTitle,
-                            userName,
-                            userBirth,
-                            userPhoneNum,
-                            userEmail,
-                            imageData,
-                            graduationDayY,
-                            graduationDayM,
-                            highLevel,
-                            schoolName,
-                            major,
-                            score,
-                            perfectScore,
-                            githubLink,
-                            notionLink,
-                            blogLink,
-                            careerStartY,
-                            careerStartM,
-                            careerEndY,
-                            careerEndM,
-                            companyName,
-                            companyExplain,
-                            companyPosition,
-                            companyMainBusiness,
-                            projectStartY,
-                            projectStartM,
-                            projectEndY,
-                            projectEndM,
-                            projectName,
-                            projectExplain,
-                            projectPosition,
-                            projectMainBusiness,
-                            educationStartY,
-                            educationStartM,
-                            educationEndY,
-                            educationEndM,
-                            educationName,
-                            educationExplain,
-                            educationPosition,
-                            educationMainBusiness,
-                            selfIntroName,
-                            selfIntroDetail,
-                            isCareer,
-                            isEducation,
-                            isIntroSelf,
-                            isLastDegree,
-                            isLink,
-                            isProfile,
-                            isProject,
-                        })
+                    onClick={
+                        state
+                            ? () =>
+                                  editButton({
+                                      resumeId,
+                                      resumeTitle,
+                                      userName,
+                                      userBirth,
+                                      userPhoneNum,
+                                      userEmail,
+                                      imageData,
+                                      graduationDayY,
+                                      graduationDayM,
+                                      highLevel,
+                                      schoolName,
+                                      major,
+                                      score,
+                                      perfectScore,
+                                      githubLink,
+                                      notionLink,
+                                      blogLink,
+                                      careerStartY,
+                                      careerStartM,
+                                      careerEndY,
+                                      careerEndM,
+                                      companyName,
+                                      companyExplain,
+                                      companyPosition,
+                                      companyMainBusiness,
+                                      projectStartY,
+                                      projectStartM,
+                                      projectEndY,
+                                      projectEndM,
+                                      projectName,
+                                      projectExplain,
+                                      projectPosition,
+                                      projectMainBusiness,
+                                      educationStartY,
+                                      educationStartM,
+                                      educationEndY,
+                                      educationEndM,
+                                      educationName,
+                                      educationExplain,
+                                      educationPosition,
+                                      educationMainBusiness,
+                                      selfIntroName,
+                                      selfIntroDetail,
+                                      isCareer,
+                                      isEducation,
+                                      isIntroSelf,
+                                      isLastDegree,
+                                      isLink,
+                                      isProfile,
+                                      isProject,
+                                  })
+                            : () =>
+                                  saveButton({
+                                      resumeTitle,
+                                      userName,
+                                      userBirth,
+                                      userPhoneNum,
+                                      userEmail,
+                                      imageData,
+                                      graduationDayY,
+                                      graduationDayM,
+                                      highLevel,
+                                      schoolName,
+                                      major,
+                                      score,
+                                      perfectScore,
+                                      githubLink,
+                                      notionLink,
+                                      blogLink,
+                                      careerStartY,
+                                      careerStartM,
+                                      careerEndY,
+                                      careerEndM,
+                                      companyName,
+                                      companyExplain,
+                                      companyPosition,
+                                      companyMainBusiness,
+                                      projectStartY,
+                                      projectStartM,
+                                      projectEndY,
+                                      projectEndM,
+                                      projectName,
+                                      projectExplain,
+                                      projectPosition,
+                                      projectMainBusiness,
+                                      educationStartY,
+                                      educationStartM,
+                                      educationEndY,
+                                      educationEndM,
+                                      educationName,
+                                      educationExplain,
+                                      educationPosition,
+                                      educationMainBusiness,
+                                      selfIntroName,
+                                      selfIntroDetail,
+                                      isCareer,
+                                      isEducation,
+                                      isIntroSelf,
+                                      isLastDegree,
+                                      isLink,
+                                      isProfile,
+                                      isProject,
+                                  })
                     }
                 >
-                    작성완료
+                    {state ? '수정완료' : '작성완료'}
                 </button>
             </div>
         </div>

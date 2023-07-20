@@ -264,7 +264,7 @@
 .notion-link,
 .blog-link {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 15px;
 }
