@@ -66,13 +66,13 @@ const ResumeArticle = (props) => {
     const [educationMainBusiness, setEducationMainBusiness] = useState(state?.educationMainBusiness || '');
     const [selfIntroName, setSelfIntroName] = useState(state?.selfIntroName || '');
     const [selfIntroDetail, setSelfIntroDetail] = useState(state?.selfIntroDetail || '');
-    const [isProfile, setIsProfile] = useState(state?.isProfile || true);
-    const [isLastDegree, setIsLastDegree] = useState(state?.isLastDegree || true);
-    const [isCareer, setIsCareer] = useState(state?.isCareer || true);
-    const [isProject, setIsProject] = useState(state?.isProject || true);
-    const [isEducation, setIsEducation] = useState(state?.isEducation || true);
-    const [isLink, setIsLink] = useState(state?.isLink || true);
-    const [isIntroSelf, setIsIntroSelf] = useState(state?.isIntroSelf || true);
+    const [isProfile, setIsProfile] = useState(state?.isProfile ?? true);
+    const [isLastDegree, setIsLastDegree] = useState(state?.isLastDegree ?? true);
+    const [isCareer, setIsCareer] = useState(state?.isCareer ?? true);
+    const [isProject, setIsProject] = useState(state?.isProject ?? true);
+    const [isEducation, setIsEducation] = useState(state?.isEducation ?? true);
+    const [isLink, setIsLink] = useState(state?.isLink ?? true);
+    const [isIntroSelf, setIsIntroSelf] = useState(state?.isIntroSelf ?? true);
     const changeImage = (files) => {
         const file = files[0];
         var reader = new FileReader();
@@ -118,6 +118,11 @@ const ResumeArticle = (props) => {
         }
     };
 
+    const autoResize = (e) => {
+        e.target.style.height = 'auto';
+        e.target.style.height = e.target.scrollHeight + 'px';
+    };
+
     return (
         <div className="article-container">
             <div className="resume-title-div">
@@ -150,7 +155,7 @@ const ResumeArticle = (props) => {
                                 alt=""
                                 style={
                                     imageData
-                                        ? { width: '120px', height: '150px' }
+                                        ? { borderRadius: '20px', width: '120px', height: '150px' }
                                         : { width: '100px', height: '100px' }
                                 }
                             />
@@ -361,13 +366,13 @@ const ResumeArticle = (props) => {
                             onChange={(e) => setCompanyPosition(e.target.value)}
                             value={companyPosition}
                         />
-                        <div
-                            contentEditable="true"
+                        <textarea
                             className="company-task-detail"
                             placeholder="주요 업무를 작성해주세요"
                             onChange={(e) => setCompanyMainBusiness(e.target.value)}
                             value={companyMainBusiness}
-                        ></div>
+                            onInput={autoResize}
+                        />
                     </div>
                 </div>
             ) : null}
@@ -442,13 +447,13 @@ const ResumeArticle = (props) => {
                             onChange={(e) => setProjectPosition(e.target.value)}
                             value={projectPosition}
                         />
-                        <div
-                            contentEditable="true"
+                        <textarea
                             className="project-detail"
                             placeholder="프로젝트 상세내용을 작성해주세요"
                             onChange={(e) => setProjectMainBusiness(e.target.value)}
                             value={projectMainBusiness}
-                        ></div>
+                            onInput={autoResize}
+                        />
                     </div>
                 </div>
             ) : null}
@@ -527,13 +532,13 @@ const ResumeArticle = (props) => {
                             onChange={(e) => setEducationPosition(e.target.value)}
                             value={educationPosition}
                         />
-                        <div
-                            contentEditable="true"
+                        <textarea
                             className="project-detail"
                             placeholder="상세내용을 작성해주세요"
-                            onChange={(e) => setEducationMainBusiness(e.target.value)}
+                            onInput={autoResize}
                             value={educationMainBusiness}
-                        ></div>
+                            onChange={(e) => setEducationMainBusiness(e.target.value)}
+                        />
                     </div>
                 </div>
             ) : null}
@@ -604,13 +609,13 @@ const ResumeArticle = (props) => {
                         onChange={(e) => setSelfIntroName(e.target.value)}
                         value={selfIntroName}
                     />
-                    <div
-                        contentEditable="true"
+                    <textarea
                         className="cover-letter-detail"
                         placeholder="자기소개서 내용을 작성해주세요"
                         onChange={(e) => setSelfIntroDetail(e.target.value)}
                         value={selfIntroDetail}
-                    ></div>
+                        onInput={autoResize}
+                    />
                 </div>
             ) : null}
             <div>

@@ -1,8 +1,11 @@
 span {
     font-weight: 600;
 }
+.my-resume-detail-div {
+    margin-bottom: 50px;
+}
 .my-resume-detail-container {
-    width: 60%;
+    width: 70%;
     height: 100%;
     margin: 20px;
 }
@@ -39,7 +42,50 @@ span {
 .myresume-notion-link,
 .myresume-blog-link {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin: 15px;
+}
+.main-business {
+    display: block;
+    background-color: #f2f2f2;
+    font-weight: 600;
+    white-space: pre-wrap;
+}
+
+.my-resume-detail-button {
+    margin: 20px;
+}
+
+.edit-button,
+.back-button {
+    background-color: hsl(209, 70%, 60%);
+    color: #ffffff;
+    margin: 5px;
+}
+.edit-button:focus,
+.back-button:focus {
+    outline: none;
+}
+.edit-button:hover,
+.back-button:hover {
+    background-color: rgb(0, 108, 209);
+    outline: none;
+}
+
+.delete-button {
+    background-color: hsl(345, 98%, 49%);
+    color: #ffffff;
+    margin: 5px;
+}
+.delte-button:focus {
+    outline: none;
+}
+.delte-button:hover {
+    background-color: rgb(255, 0, 0);
+    border: none;
+}
+.self-intro-container {
+    width: 70%;
+    margin: auto;
 }

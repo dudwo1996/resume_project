@@ -60,7 +60,7 @@ const NavBar = (props) => {
     return (
         <nav className="nav-bar-container">
             <div
-                style={{ color: '#ffffff', marginLeft: '10px', cursor: 'pointer' }}
+                style={{ fontSize: '20px', fontWeight: '800', marginLeft: '10px', cursor: 'pointer' }}
                 onClick={() => navigate('/home/appbody')}
             >
                 CYJ's Resume Project

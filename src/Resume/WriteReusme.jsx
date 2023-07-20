@@ -50,6 +50,7 @@ const WriteResume = () => {
         const deleteResume = await resumeData[0].resumeData.filter((resume) => resume.resumeId !== data.resumeId);
         await deleteResume.push(data);
         update({ id: resumeData[0].id, resumeData: deleteResume });
+        alert('이력서 수정 완료!');
         navigate('/home/myresume');
     };
 
