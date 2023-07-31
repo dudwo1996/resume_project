@@ -5,6 +5,7 @@ import resumeLogo from '../image/curriculum.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useIndexedDB } from 'react-indexed-db';
 import { useCookies } from 'react-cookie';
+import arrowBottomIcon from '../image/arrow-bottom.png';
 
 const Signin = () => {
     const { getAll } = useIndexedDB('member');
@@ -14,6 +15,7 @@ const Signin = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [db, setDb] = useState();
+    const [scroll, setScroll] = useState(0);
     useEffect(() => {
         getAll().then((dbData) => {
             setDb(dbData);
@@ -37,44 +39,63 @@ const Signin = () => {
         }
     };
 
+    window.addEventListener('scroll', function () {
+        let value = window.scrollY;
+        setScroll(value);
+        console.log(scroll);
+    });
+    const style = scroll > 250 ? { opacity: '1', transition: '2s' } : { opacity: '0', transition: '1s' };
+
     return (
         <div className="signin-container">
-            <div className="signin-logo">
-                <Link to="/intro">
-                    <img src={resumeLogo} />
-                </Link>
-            </div>
-            <form className="signin-format" onSubmit={signin}>
-                <h1>로그인</h1>
-                <div className="signin-input-wrap">
-                    <div className="id-input">
-                        <input
-                            className="signin-input"
-                            type="text"
-                            placeholder="아이디를 입력해주세요."
-                            onChange={(e) => setId(e.target.value)}
-                        />
-                    </div>
-                    <div className="password-input">
-                        <input
-                            className="signin-input"
-                            type="password"
-                            placeholder="패스워드를 입력해주세요."
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
+            <section>
+                <div className="signin-title">Resume Project</div>
+                <div className="signin-desc">
+                    이 프로젝트는 이력서를 작성하고 PC로 다운로드 할 수 있는 기능을 구현한 프로젝트입니다.
                 </div>
-                <div className="signin-button">
-                    <button className="signin-button" type="submit">
-                        로그인
-                    </button>
+                <div className="scroll-text">
+                    <img src={arrowBottomIcon} />
+                    <div>밑으로 스크롤하세요.</div>
                 </div>
-                <div className="signup-button">
-                    <Link className="signup-link" to="/signup">
-                        회원가입
+            </section>
+            <div className="signin-box">
+                <div className="signin-logo" style={style}>
+                    <Link to="/intro">
+                        <img src={resumeLogo} />
                     </Link>
                 </div>
-            </form>
+                <form style={style} className="signin-format" onSubmit={signin}>
+                    <h1>로그인</h1>
+                    <div className="signin-input-wrap">
+                        <div className="id-input">
+                            <input
+                                className="signin-input"
+                                type="text"
+                                placeholder="아이디를 입력해주세요."
+                                onChange={(e) => setId(e.target.value)}
+                            />
+                        </div>
+                        <div className="password-input">
+                            <input
+                                className="signin-input"
+                                type="password"
+                                placeholder="패스워드를 입력해주세요."
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                    <div className="signin-button">
+                        <button className="signin-button" type="submit">
+                            로그인
+                        </button>
+                    </div>
+                    <div className="signup-button">
+                        <Link className="signup-link" to="/signup">
+                            회원가입
+                        </Link>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };
