@@ -381,7 +381,7 @@
 }
 
 .save-button {
-    background-color: hsl(209, 70%, 60%);
+    background-color: #498dcd;
     color: #ffffff;
     margin: 15px;
 }
@@ -401,5 +401,5 @@ textarea {
 }
 
 textarea:focus {
-    border: solid 2px hsl(209, 70%, 60%);
+    border: solid 2px #498dcd;
 }

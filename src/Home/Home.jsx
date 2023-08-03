@@ -7,6 +7,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import { useIndexedDB } from 'react-indexed-db';
 import { useState } from 'react';
+// import arrowBottomIcon from '../image/arrow-bottom.png';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -21,21 +22,18 @@ const Home = () => {
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-
     return (
         <div className="home-container">
             <NavBar memberInfo={memberInfo} />
             <div
                 style={{
-                    display: 'flex',
                     width: '100%',
-                    minHeight: '100vh',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    height: '70%',
                 }}
             >
                 <Outlet context={{ memberInfo }} />
             </div>
+            <footer className="footer"></footer>
         </div>
     );
 };

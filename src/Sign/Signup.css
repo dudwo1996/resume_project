@@ -1,11 +1,18 @@
 .signup-container {
     text-align: left;
-    width: 400px;
-    height: 115vh;
+    min-height: 100vh;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: rgb(73 141 205);
+}
+.signup-box {
+    width: 400px;
+    margin: auto;
+    background: #dde8ed;
+    padding: 30px;
+    border-radius: 15px;
 }
 .signup-logo {
     text-align: center;
@@ -26,7 +33,6 @@
 .signup-container input {
     margin-top: 5px;
     transition: 300ms;
-    box-shadow: inset 0px 0px 0px 1px hsl(0, 0%, 75%);
     width: 94%;
     height: 25px;
     font-size: 14px;
@@ -35,16 +41,20 @@
     border: none;
     border-radius: 5px;
     outline: none;
-    color: #707070;
+    color: #3d4159;
+    border: 1px solid #3d4159;
+}
+.signup-container input::placeholder {
+    color: #8d8d8d;
 }
 
 .signup-container div span {
-    color: #707070;
+    color: #3d4159;
     font-weight: 800;
 }
 
 .signup-container input:focus {
-    outline: 1px solid hsl(209, 70%, 60%);
+    outline: 1px solid #498dcd;
 }
 
 .nickname-div {
@@ -53,6 +63,7 @@
 .nickname-input-button {
     display: flex;
     justify-content: space-between;
+    border: none;
 }
 .nickname-input-button button {
     all: unset;
@@ -116,7 +127,7 @@
 
 .signup-button-div {
     width: 100%;
-    background-color: hsl(209, 70%, 60%);
+    background-color: #498dcd;
     color: #ffffff;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -124,7 +135,7 @@
 
 .signup-button-div button {
     width: 100%;
-    background-color: hsl(209, 70%, 60%);
+    background-color: #498dcd;
     color: #ffffff;
 }
 

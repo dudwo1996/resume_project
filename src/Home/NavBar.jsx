@@ -60,24 +60,26 @@ const NavBar = (props) => {
     return (
         <nav className="nav-bar-container">
             <div
-                style={{ fontSize: '20px', fontWeight: '800', marginLeft: '10px', cursor: 'pointer' }}
+                style={{ fontSize: '2.5rem', fontWeight: '800', marginLeft: '50px', cursor: 'pointer' }}
                 onClick={() => navigate('/home/appbody')}
             >
-                CYJ's Resume Project
+                Resume Project.
             </div>
             <div className="userInfo-div" onClick={() => setIsList(!isList)}>
-                <div style={{ display: 'flex' }}>
+                <div style={{ display: 'flex', fontSize: '1.2rem' }}>
                     <img src={userIcon} />
                     <button className="unser-info-button">{memberInfo.nickname}</button>
                 </div>
                 {isList ? (
                     <>
-                        <button className="menu-list" onClick={handleEvent}>
-                            로그아웃
-                        </button>
-                        <button className="menu-list2" onClick={membershipWithdrawal}>
-                            회원탈퇴
-                        </button>
+                        <div className="menu-list-box">
+                            <button className="menu-list" onClick={handleEvent}>
+                                로그아웃
+                            </button>
+                            <button className="menu-list2" onClick={membershipWithdrawal}>
+                                회원탈퇴
+                            </button>
+                        </div>
                     </>
                 ) : null}
             </div>

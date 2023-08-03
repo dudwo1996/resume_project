@@ -1,39 +1,67 @@
 .AppBody-container {
-    background: #f2f2f2;
+    height: 100%;
+    width: 100%;
+}
+.appbody-top-section {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
 }
-.add-resume-img {
-    border-radius: 10px;
-    margin: 30px;
+.appbody-top-section img {
+    animation: buttonAppear 2s ease-in-out;
 }
-.my-resume-img {
-    border-radius: 10px;
-    margin: 30px;
+.button-container {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    animation: buttonAppear 2s ease-in-out;
 }
-.my-resume-img:hover {
-    cursor: pointer;
+.button-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    color: #364049;
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: sans-serif;
+    background: #e2b659;
+    margin-right: 30px;
 }
-
-.add-resume-img:hover {
-    cursor: pointer;
-    /* border-radius: 10px; */
-    /* background-color: #f2f2f2; */
+.button-container button:focus,
+.button-container button:hover {
+    outline: none;
 }
-
-.add-resume-img img:hover {
-    transform: scale();
-    animation: motion 0.4s linear 0s infinite alternate;
-}
-.my-resume-img img:hover {
-    transform: scale();
-    animation: motion 0.4s linear 0s infinite alternate;
-}
-
-@keyframes motion {
+@keyframes buttonAppear {
     0% {
-        margin-top: 0px;
+        margin-bottom: 100px;
+        opacity: 0;
     }
     100% {
-        margin-top: 20px;
+        margin-bottom: 0px;
+        opacity: 1;
     }
+}
+.appbody-text-box {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #364049;
+    animation: buttonAppear 2s ease-in-out;
+}
+.appbody-text {
+    width: 420px;
+    font-size: 3rem;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+
+.appbody-text2 {
+    width: 525px;
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: sans-serif;
 }

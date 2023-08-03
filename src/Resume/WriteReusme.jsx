@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
-import Loading from '../Loding/Loading';
 import './WriteResume.css';
 import ResumeLeft from './ResumeLeft';
 import ResumeArticle from './ResumeArticle';
@@ -12,19 +11,12 @@ import { useCookies } from 'react-cookie';
 import { v4 as uuidv4 } from 'uuid';
 
 const WriteResume = () => {
-    const [isLoading, setIsLoading] = useState(false);
     const { memberInfo } = useOutletContext();
     const { add, getAll, update } = useIndexedDB('resume');
     const userId = useCookies(['id'])[0].id;
     const navigate = useNavigate();
 
-    useEffect(() => {
-        setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 500);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    useEffect(() => {}, []);
 
     const saveButton = async (data) => {
         const getAllRes = await getAll();
@@ -54,30 +46,26 @@ const WriteResume = () => {
         navigate('/home/myresume');
     };
 
-    if (isLoading) {
-        return <Loading />;
-    } else {
-        return (
-            <div className="write-resume-container">
-                <div className="container-main">
-                    <aside style={{ width: '20%' }}>
-                        <ResumeLeft />
-                    </aside>
-                    <main style={{ width: '60%' }}>
-                        <article style={{ width: '100%' }}>
-                            <ResumeArticle saveButton={saveButton} editButton={editButton} />
-                        </article>
-                    </main>
-                    <aside style={{ width: '20%' }}>
-                        <ResumeRight />
-                    </aside>
-                </div>
-                <footer>
-                    <ResumeFooter />
-                </footer>
+    return (
+        <div className="write-resume-container">
+            <div className="container-main">
+                <aside style={{ width: '20%' }}>
+                    <ResumeLeft />
+                </aside>
+                <main style={{ width: '60%' }}>
+                    <article style={{ width: '100%' }}>
+                        <ResumeArticle saveButton={saveButton} editButton={editButton} />
+                    </article>
+                </main>
+                <aside style={{ width: '20%' }}>
+                    <ResumeRight />
+                </aside>
             </div>
-        );
-    }
+            <footer>
+                <ResumeFooter />
+            </footer>
+        </div>
+    );
 };
 
 export default WriteResume;

@@ -1,5 +1,28 @@
 .home-container {
     width: 100%;
-    background: #f2f2f2;
-    min-height: 100vh;
+    height: 100%;
+}
+
+.home-text {
+    width: 420px;
+    font-size: 3rem;
+    font-family: sans-serif;
+}
+.home-text2 {
+    width: 500px;
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+.footer {
+    height: 20%;
+    background: #498dcd;
+    animation: change-color 2s ease-in-out;
+}
+@keyframes change-color {
+    0% {
+        background: #ffffff;
+    }
+    100% {
+        background: #498dcd;
+    }
 }

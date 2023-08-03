@@ -1,17 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import './AppBody.css';
-import addResumeIcon from '../image/edit.png';
-import myResumeIcon from '../image/my_resume.png';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import Loading from '../Loding/Loading';
+import homeImage from '../image/home_image1.jpg';
 
 const AppBody = () => {
     const navigate = useNavigate();
     // eslint-disable-next-line no-unused-vars
     const [cookies, removeCookie] = useCookies(['id']);
-    const [isLoading, setIsLoading] = useState(false);
 
     const toWriteResume = () => {
         navigate('/home/writeresume');
@@ -35,6 +32,7 @@ const AppBody = () => {
     };
 
     useEffect(() => {
+        scrollTo(0, 0);
         window.addEventListener('popstate', handleEvent);
         return () => {
             window.removeEventListener('popstate', handleEvent);
@@ -42,26 +40,26 @@ const AppBody = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    useEffect(() => {
-        setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 500);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    if (isLoading) {
-        return <Loading />;
-    } else {
-        return (
-            <div className="AppBody-container">
-                <div className="add-resume-img" onClick={toWriteResume}>
-                    <img src={addResumeIcon} />
+    return (
+        <div className="AppBody-container">
+            <section className="appbody-top-section">
+                <div>
+                    <div className="appbody-text-box">
+                        <div className="appbody-text">이력서를 작성하고 다운로드 해보세요.</div>
+                        <div className="appbody-text2">Write and download your resume.</div>
+                    </div>
+                    <div className="button-container">
+                        <button className="add-resume-btn" onClick={toWriteResume}>
+                            <span className="write-resume-text">이력서 작성</span>
+                        </button>
+                        <button className="my-resume-btn" onClick={toMyResume}>
+                            <span className="my-resume-text">내 이력서</span>
+                        </button>
+                    </div>
                 </div>
-                <div className="my-resume-img" onClick={toMyResume}>
-                    <img src={myResumeIcon} />
-                </div>
-            </div>
-        );
-    }
+                <img src={homeImage} style={{ width: '35%', height: '80%' }} />
+            </section>
+        </div>
+    );
 };
 export default AppBody;

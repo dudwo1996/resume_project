@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import addUserIcon from '../image/add-user.png';
 import { useIndexedDB } from 'react-indexed-db';
 import CheckIcon from '../image/check.png';
-import Loading from '../Loding/Loading';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -18,16 +17,11 @@ const Signup = () => {
     const [db, setDb] = useState();
     const [isNick, setIsNick] = useState(false);
     const [isId, setIsId] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         getAll().then((dbData) => {
             setDb(dbData);
         });
-        setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 500);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -76,15 +70,13 @@ const Signup = () => {
         }
     };
 
-    if (isLoading) {
-        return <Loading />;
-    } else {
-        return (
-            <div className="signup-container">
+    return (
+        <div className="signup-container">
+            <div className="signup-box">
                 <div className="signup-logo">
                     <img className="" src={addUserIcon} />
                 </div>
-                <h1 style={{ textAlign: 'center' }}>회원가입</h1>
+                <h1 style={{ textAlign: 'center', color: '#3d4159' }}>회원가입</h1>
                 <div className="nickname-div">
                     <span style={{ marginBottom: '5px' }}>닉네임</span>
                     <div className="nickname-input-button">
@@ -92,7 +84,11 @@ const Signup = () => {
                             type="text"
                             placeholder="사용할 닉네임을 입력하세요."
                             onChange={(e) => setNick(e.target.value)}
-                            style={isNick ? { backgroundColor: 'lightGrey', width: '300px' } : { width: '300px' }}
+                            style={
+                                isNick
+                                    ? { backgroundColor: 'lightGrey', width: '300px', border: '1px solid #3d4159' }
+                                    : { width: '300px', border: '1px solid #3d4159' }
+                            }
                             value={nick}
                             readOnly={isNick ? true : false}
                         />
@@ -113,7 +109,11 @@ const Signup = () => {
                             type="text"
                             placeholder="사용할 아이디를 입력하세요."
                             onChange={(e) => setId(e.target.value)}
-                            style={isId ? { backgroundColor: 'lightGrey', width: '300px' } : { width: '300px' }}
+                            style={
+                                isId
+                                    ? { backgroundColor: 'lightGrey', width: '300px', border: '1px solid #3d4159' }
+                                    : { width: '300px', border: '1px solid #3d4159' }
+                            }
                             value={id}
                             readOnly={isId ? true : false}
                         />
@@ -155,8 +155,8 @@ const Signup = () => {
                     </Link>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 };
 
 export default Signup;
