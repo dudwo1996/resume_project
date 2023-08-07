@@ -1,11 +1,20 @@
+.myResume-container {
+    margin-bottom: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .my-resume-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     margin-top: 10px;
-    border: 3px solid #498dcd;
+    border: 3px solid #daf3f0;
     border-radius: 10px;
 }
+
 .mapping-resume {
     list-style: none;
     width: 95px;

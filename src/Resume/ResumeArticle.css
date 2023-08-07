@@ -1,33 +1,39 @@
 .article-container {
     width: 100%;
     height: 100%;
+    background: #daf3f0;
+    padding: 20px;
+    border-radius: 10px;
 }
 .resume-title-div {
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 70%;
+    width: 84%;
+    height: 40px;
     background: #ffffff;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 30px;
     border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 .resume-title-box {
-    margin-left: 10px;
     width: 100%;
-    height: 30px;
+    height: 100%;
     border: none;
     font-size: 20px;
     font-weight: 800;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.resume-title-box::placeholder {
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .resume-title-box:hover {
-    background: #f2f2f2;
+    background: #e6f4f1;
 }
 
 .resume-title-box:focus {
@@ -37,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 75%;
+    width: 80%;
     margin: auto;
     margin-bottom: 15px;
 }
@@ -45,7 +51,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 30px;
@@ -77,7 +83,7 @@
 
 .image-input-label:hover {
     cursor: pointer;
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .user-info-div {
     display: flex;
@@ -94,12 +100,12 @@
     background-color: #ffffff;
     width: 150px;
     height: 50px;
-    font-size: 25px;
+    font-size: 1.5rem;
     border-radius: 5px;
 }
 
 .user-name:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 
 .user-birth {
@@ -109,11 +115,11 @@
     background-color: #ffffff;
     width: 200px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
 }
 .user-birth:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .user-phone-num {
     all: unset;
@@ -122,11 +128,11 @@
     background-color: #ffffff;
     width: 200px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
 }
 .user-phone-num:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .user-email {
     all: unset;
@@ -135,17 +141,17 @@
     background-color: #ffffff;
     width: 200px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
 }
 .user-email:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .education-div {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 30px;
@@ -159,36 +165,36 @@
     all: unset;
     display: block;
     background-color: #ffffff;
-    width: 40px;
+    width: 45px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
 }
 .education-year:hover,
 .career-year:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .education-month,
 .career-month {
     all: unset;
     display: block;
     background-color: #ffffff;
-    width: 25px;
+    width: 35px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
     margin-right: 3px;
 }
 .education-month:hover,
 .career-year:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .education-select {
     all: unset;
 }
 .education-select:hover {
     cursor: pointer;
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .school-name {
     all: unset;
@@ -200,45 +206,45 @@
     border-radius: 5px;
 }
 .school-name:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .Major-name {
     all: unset;
     background-color: #ffffff;
     width: 200px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
 }
 .Major-name:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .education-score {
     all: unset;
     background-color: #ffffff;
-    width: 30px;
+    width: 40px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
 }
 .education-score:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .perfect-score {
     all: unset;
     background-color: #ffffff;
-    width: 30px;
+    width: 40px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
 }
 .perfect-score:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 .link-div {
     justify-content: space-around;
     align-items: center;
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 30px;
@@ -252,19 +258,19 @@
     background-color: #ffffff;
     width: 400px;
     height: 25px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
     text-align: left;
 }
 .link-div input:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 
 .github-link,
 .notion-link,
 .blog-link {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin: 15px;
 }
@@ -274,7 +280,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 5px;
     margin-bottom: 30px;
@@ -287,7 +293,7 @@
     background-color: #ffffff;
     width: 350px;
     height: 35px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
     text-align: left;
 }
@@ -295,7 +301,7 @@
 .company-profile:hover,
 .company-position:hover,
 .main-business:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 
 .company-profile {
@@ -320,59 +326,67 @@
     all: unset;
     background-color: #ffffff;
     width: 350px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
     text-align: left;
 }
 .project-detail,
 .company-task-detail {
+    border: 0;
+    margin: 0;
     background-color: #ffffff;
     width: 350px;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
     text-align: left;
     color: #777676;
     margin: auto;
 }
 .cover-letter-detail {
-    width: 90%;
+    width: 100%;
+    height: 82%;
     background-color: #ffffff;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 5px;
     text-align: left;
     color: #777676;
+    /* background: #E6F4F1; */
     margin: auto;
+    border: 0;
 }
-.project-detail:focus,
-.company-task-detail:focus,
-.cover-letter-detail:focus {
+.project-detail:focus-visible,
+.company-task-detail:focus-visible,
+.cover-letter-detail:focus-visible {
     outline: none;
 }
 .project-detail:hover,
 .company-task-detail:hover,
 .cover-letter-detail:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 
 .cover-letter-div {
-    width: 70%;
+    width: 85%;
+    height: 400px;
     margin: auto;
     margin-top: 5px;
     background: #ffffff;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .cover-letter-title {
     all: unset;
-    background-color: #ffffff;
-    width: 90%;
-    font-size: 16x;
+    /* background-color: #E6F4F1; */
+    width: 100%;
+    height: 15%;
+    margin-bottom: 10px;
+    font-size: 1rem;
     border-radius: 5px;
-    text-align: left;
+    text-align: center;
 }
 .cover-letter-title:hover {
-    background-color: #f2f2f2;
+    background-color: #e6f4f1;
 }
 
 [contenteditable='true']:empty:before {
@@ -381,25 +395,29 @@
 }
 
 .save-button {
-    background-color: #498dcd;
-    color: #ffffff;
+    background-color: #daf3f0;
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: 600;
     margin: 15px;
 }
 .save-button:focus {
     outline: none;
 }
 .save-button:hover {
-    background-color: rgb(0, 108, 209);
+    background-color: #00b4ff;
     outline: none;
 }
 
 textarea {
     resize: none;
-    border: solid 2px #000000;
-    padding: 10px;
-    border-radius: 5px;
 }
-
-textarea:focus {
-    border: solid 2px #498dcd;
+.display-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button-box {
+    margin-top: 20px;
 }

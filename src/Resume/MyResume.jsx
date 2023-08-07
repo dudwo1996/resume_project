@@ -27,7 +27,7 @@ const MyResume = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
-        <div style={{ height: '100%' }}>
+        <div className="myResume-container" style={{ height: '100%' }}>
             <span style={{ fontSize: '30px', fontWeight: '800' }}>나의 이력서</span>
             <div className="my-resume-container">
                 {resumeList.map((resume, idx) => {

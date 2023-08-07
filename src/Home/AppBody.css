@@ -23,16 +23,23 @@
     align-items: center;
     width: 200px;
     height: 50px;
-    color: #364049;
+    color: #3d4856;
     font-size: 1.2rem;
     font-weight: 800;
     font-family: sans-serif;
-    background: #e2b659;
+    background: #df9f1f;
     margin-right: 30px;
 }
 .button-container button:focus,
 .button-container button:hover {
+    border: 0;
     outline: none;
+}
+.button-container button:active {
+    top: 2px;
+    border-color: rgba(0, 0, 0, 0.34) rgba(0, 0, 0, 0.21) rgba(0, 0, 0, 0.21);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.89), 0 1px rgba(0, 0, 0, 0.05) inset;
+    position: relative;
 }
 @keyframes buttonAppear {
     0% {
