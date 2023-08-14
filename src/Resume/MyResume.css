@@ -11,7 +11,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     margin-top: 10px;
-    border: 3px solid #daf3f0;
+    border: 3px solid #3d4856;
     border-radius: 10px;
 }
 
@@ -26,6 +26,8 @@
     cursor: pointer;
 }
 .mapping-resume-title {
+    font-size: 1rem;
+    font-weight: 700;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

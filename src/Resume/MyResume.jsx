@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import './MyResume.css';
 import { useIndexedDB } from 'react-indexed-db';
 import { useCookies } from 'react-cookie';
-import resumeIcon from '../image/curriculum64x64.png';
-import writeResumeIcon from '../image/edit64x64.png';
+import resumeIcon from '../image/myresumeimage.png';
+import writeResumeIcon from '../image/myresumewriteimage.png';
 import { useNavigate } from 'react-router-dom';
 
 const MyResume = () => {

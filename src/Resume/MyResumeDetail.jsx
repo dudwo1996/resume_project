@@ -250,10 +250,12 @@ const MyResumeDetail = () => {
                                         <span>{state.careerEndM}</span>
                                     </div>
                                     <div style={{ textAlign: 'left', width: '295px' }}>
-                                        <span style={{ display: 'block' }}>
+                                        <span style={{ display: 'block', marginBottom: '10px' }}>
                                             {state.companyName} | {state.companyPosition}
                                         </span>
-                                        <span style={{ display: 'block' }}>{state.companyExplain}</span>
+                                        <span style={{ display: 'block', marginBottom: '10px' }}>
+                                            {state.companyExplain}
+                                        </span>
                                         <span
                                             className="main-business"
                                             style={{ display: 'block', whiteSpace: 'pre-wrap' }}
@@ -296,10 +298,16 @@ const MyResumeDetail = () => {
                                             {state.projectEndM}
                                         </span>
                                     </div>
-                                    <div style={{ width: '295px' }}>
-                                        <span>{state.ProjectName}</span>
-                                        <span>{state.ProjectExplain}</span>
-                                        <span>{state.projectPosition}</span>
+                                    <div style={{ width: '295px', textAlign: 'left' }}>
+                                        <span style={{ display: 'block', marginBottom: '10px' }}>
+                                            {state.projectName}
+                                        </span>
+                                        <span style={{ display: 'block', marginBottom: '10px' }}>
+                                            {state.projectExplain}
+                                        </span>
+                                        <span style={{ display: 'block', marginBottom: '10px' }}>
+                                            {state.projectPosition}
+                                        </span>
                                         <span className="main-business">{state.projectMainBusiness}</span>
                                     </div>
                                 </div>
@@ -338,10 +346,12 @@ const MyResumeDetail = () => {
                                         </span>
                                     </div>
                                     <div style={{ textAlign: 'left', width: '295px' }}>
-                                        <span style={{ display: 'block' }}>
+                                        <span style={{ display: 'block', marginBottom: '10px' }}>
                                             {state.educationName} | {state.educationExplain}
                                         </span>
-                                        <span style={{ display: 'block' }}>{state.educationPosition}</span>
+                                        <span style={{ display: 'block', marginBottom: '10px' }}>
+                                            {state.educationPosition}
+                                        </span>
                                         <span
                                             className="main-business"
                                             style={{ display: 'block', whiteSpace: 'pre-wrap' }}

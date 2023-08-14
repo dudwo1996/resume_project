@@ -10,6 +10,10 @@ span {
     margin: auto;
     margin-top: 50px;
 }
+#resume-container-pdf {
+    border: 3px solid #3d4856;
+    border-radius: 10px;
+}
 .my-resume-detail-title {
     font-size: 30px;
     font-weight: 800;
