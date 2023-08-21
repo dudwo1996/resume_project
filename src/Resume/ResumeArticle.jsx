@@ -137,7 +137,7 @@ const ResumeArticle = (props) => {
                 <div className="sub-title">
                     <div style={{ display: 'flex' }}>
                         <img src={personInfoIcon} />
-                        <span>기본 정보</span>
+                        <span style={{ marginLeft: '10px' }}>기본 정보</span>
                     </div>
                     <Checkbox
                         value="isProfile"
@@ -216,7 +216,7 @@ const ResumeArticle = (props) => {
                 <div className="sub-title">
                     <div style={{ display: 'flex' }}>
                         <img src={graduationIcon} />
-                        <span>최종 학력</span>
+                        <span style={{ marginLeft: '10px' }}>최종 학력</span>
                     </div>
                     <Checkbox
                         value="isLastDegree"
@@ -303,7 +303,7 @@ const ResumeArticle = (props) => {
                 <div className="sub-title">
                     <div style={{ display: 'flex' }}>
                         <img src={careerIcon} />
-                        <span>경력</span>
+                        <span style={{ marginLeft: '10px' }}>경력</span>
                     </div>
                     <Checkbox value="isCareer" checked={isCareer} onChange={(e) => checkboxOncahnge(e.target.value)} />
                 </div>
@@ -384,7 +384,7 @@ const ResumeArticle = (props) => {
                 <div className="sub-title">
                     <div style={{ display: 'flex' }}>
                         <img src={projectIcon} />
-                        <span>프로젝트</span>
+                        <span style={{ marginLeft: '10px' }}>프로젝트</span>
                     </div>
                     <Checkbox
                         value="isProject"
@@ -469,7 +469,7 @@ const ResumeArticle = (props) => {
                 <div className="sub-title">
                     <div style={{ display: 'flex' }}>
                         <img src={educationIcon} />
-                        <span>교육 이력</span>
+                        <span style={{ marginLeft: '10px' }}>교육 이력</span>
                     </div>
                     <Checkbox
                         value="isEducation"
@@ -554,7 +554,7 @@ const ResumeArticle = (props) => {
                 <div className="sub-title">
                     <div style={{ display: 'flex' }}>
                         <img src={linkIcon} />
-                        <span>링크</span>
+                        <span style={{ marginLeft: '10px' }}>링크</span>
                     </div>
                     <Checkbox value="isLink" checked={isLink} onChange={(e) => checkboxOncahnge(e.target.value)} />
                 </div>
@@ -601,7 +601,7 @@ const ResumeArticle = (props) => {
                 <div className="sub-title">
                     <div style={{ display: 'flex' }}>
                         <img src={introSelfIcon} />
-                        <span>자기소개서</span>
+                        <span style={{ marginLeft: '10px' }}>자기소개서</span>
                     </div>
                     <Checkbox
                         value="isIntroSelf"

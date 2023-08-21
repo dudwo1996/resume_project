@@ -8,10 +8,12 @@
 }
 .my-resume-container {
     display: grid;
+    width: 60%;
+    height: 400px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     margin-top: 10px;
-    border: 3px solid #3d4856;
+    border: 0.5px solid #3d4856;
     border-radius: 10px;
 }
 
@@ -31,4 +33,35 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.my-resume-btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.my-resume-btn-wrap button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 155px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: sans-serif;
+    background: #df9f1f;
+    margin-right: 30px;
+}
+.empty-text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 400px;
+    margin-top: 10px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+    font-size: 1rem;
+    color: #6c6c6c;
 }

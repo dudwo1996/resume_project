@@ -33,7 +33,14 @@ const Home = () => {
             >
                 <Outlet context={{ memberInfo }} />
             </div>
-            <footer className="footer"></footer>
+            <footer className="footer">
+                <div className="footer-wrap">
+                    <div>wo_123@naver.com</div>
+                    <div>https://github.com/dudwo1996</div>
+                    <div style={{ marginBottom: '8px' }}>010-4283-7204</div>
+                    <div style={{ fontSize: '0.8rem' }}>copyrightⓒResumeProject. All Rights Reserved.</div>
+                </div>
+            </footer>
         </div>
     );
 };

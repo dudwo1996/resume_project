@@ -15,9 +15,9 @@
 .signin-title {
     position: absolute;
     top: 0%;
-    left: 1%;
+    left: 50px;
     color: #000000;
-    font-size: 3em;
+    font-size: 3rem;
     font-family: sans-serif;
     font-weight: 800;
 }
@@ -58,7 +58,8 @@
     cursor: pointer;
 }
 .scroll-text img {
-    width: 100px;
+    width: 70px;
+    height: 80px;
 }
 .signin-container {
     text-align: center;
@@ -164,7 +165,16 @@
 }
 
 .signup-button {
-    text-align: right;
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8d8d8d;
+}
+.find_button:hover {
+    color: #8d8d8d;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .signup-link {
@@ -173,7 +183,7 @@
     font-size: 14px;
     font-weight: bold;
     color: #8d8d8d;
-    text-align: right;
+    margin-left: 10px;
 }
 .signup-link:hover {
     color: #8d8d8d;

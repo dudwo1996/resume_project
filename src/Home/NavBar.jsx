@@ -60,7 +60,7 @@ const NavBar = (props) => {
     return (
         <nav className="nav-bar-container">
             <div
-                style={{ fontSize: '2.5rem', fontWeight: '800', marginLeft: '50px', cursor: 'pointer' }}
+                style={{ fontSize: '3rem', fontWeight: '800', marginLeft: '50px', cursor: 'pointer' }}
                 onClick={() => navigate('/home/appbody')}
             >
                 Resume Project.

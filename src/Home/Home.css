@@ -14,6 +14,10 @@
     font-family: sans-serif;
 }
 .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     height: 20%;
     background: #498dcd;
     animation: change-color 2s ease-in-out;
@@ -25,4 +29,11 @@
     100% {
         background: #498dcd;
     }
+}
+
+.footer-wrap {
+    font-size: 0.9rem;
+    text-align: left;
+    color: #d8d8d8;
+    margin-right: 100px;
 }

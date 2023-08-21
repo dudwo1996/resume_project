@@ -5,7 +5,7 @@ import resumeLogo from '../image/curriculum.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useIndexedDB } from 'react-indexed-db';
 import { useCookies } from 'react-cookie';
-import arrowBottomIcon from '../image/arrow-bottom.png';
+import arrowBottomIcon from '../image/arrow_down.png';
 
 const Signin = () => {
     const { getAll } = useIndexedDB('member');
@@ -49,10 +49,20 @@ const Signin = () => {
         }
     };
 
+    const findButton = () => {
+        const nickPrompt = prompt('닉네임을 입력해주세요.');
+        const exist = db.filter((db) => db.nickname === nickPrompt);
+        if (exist.length !== 0) {
+            console.log(exist);
+            alert('ID: ' + exist[0].id + ' / PW: ' + exist[0].password);
+        } else {
+            alert('존재하지 않는 닉네임입니다.');
+        }
+    };
+
     window.addEventListener('scroll', function () {
         let value = window.scrollY;
         setScroll(value);
-        console.log(scroll);
     });
     const style =
         scroll > document.body.scrollHeight / 2
@@ -111,6 +121,9 @@ const Signin = () => {
                             </button>
                         </div>
                         <div className="signup-button">
+                            <div className="find_button" onClick={findButton}>
+                                아이디/비밀번호 찾기
+                            </div>
                             <Link className="signup-link" to="/signup">
                                 회원가입
                             </Link>

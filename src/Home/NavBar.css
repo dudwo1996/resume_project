@@ -37,14 +37,12 @@
     right: 25px;
     border: 1px solid black;
     border-radius: 10px;
-    padding: 3px;
     background-color: #ffffff;
 }
 .menu-list {
     width: 115px;
     height: 30px;
-    border-bottom: 1px solid black;
-    border-radius: 0;
+    border-radius: 10px;
     padding: unset;
 }
 .menu-list:hover,
@@ -58,5 +56,5 @@
     width: 115px;
     height: 30px;
     padding: unset;
-    border-radius: 0;
+    border-radius: 10px;
 }

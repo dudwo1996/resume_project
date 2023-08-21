@@ -4,7 +4,6 @@ import './MyResume.css';
 import { useIndexedDB } from 'react-indexed-db';
 import { useCookies } from 'react-cookie';
 import resumeIcon from '../image/myresumeimage.png';
-import writeResumeIcon from '../image/myresumewriteimage.png';
 import { useNavigate } from 'react-router-dom';
 
 const MyResume = () => {
@@ -29,28 +28,36 @@ const MyResume = () => {
     return (
         <div className="myResume-container" style={{ height: '100%' }}>
             <span style={{ fontSize: '30px', fontWeight: '800' }}>나의 이력서</span>
-            <div className="my-resume-container">
-                {resumeList.map((resume, idx) => {
-                    return (
-                        <ul
-                            title={resume.resumeTitle}
-                            className="mapping-resume"
-                            key={idx}
-                            onClick={() => toResumeDetail(resume)}
-                        >
-                            <li>
-                                <img src={resumeIcon} style={{ marginBottom: '5px' }} />
-                                <div className="mapping-resume-title">{resume.resumeTitle}</div>
-                            </li>
-                        </ul>
-                    );
-                })}
-                <ul className="mapping-resume">
-                    <li onClick={toWriteResume}>
-                        <img src={writeResumeIcon} style={{ marginBottom: '5px' }} />
-                        <div className="mapping-resume-title">이력서 작성</div>
-                    </li>
-                </ul>
+            {resumeList.length === 0 ? (
+                <div onClick={() => console.log(resumeList)} className="empty-text-box">
+                    이력서함이 비어있습니다.
+                </div>
+            ) : (
+                <div className="my-resume-container">
+                    {resumeList.map((resume, idx) => {
+                        return (
+                            <ul
+                                title={resume.resumeTitle}
+                                className="mapping-resume"
+                                key={idx}
+                                onClick={() => toResumeDetail(resume)}
+                            >
+                                <li>
+                                    <img src={resumeIcon} style={{ marginBottom: '5px' }} />
+                                    <div className="mapping-resume-title">{resume.resumeTitle}</div>
+                                </li>
+                            </ul>
+                        );
+                    })}
+                </div>
+            )}
+            <div className="my-resume-btn-wrap">
+                <button className="back-button" onClick={() => navigate(-1)}>
+                    뒤로가기
+                </button>
+                <button className="write-resume-btn" onClick={toWriteResume}>
+                    이력서 작성
+                </button>
             </div>
         </div>
     );

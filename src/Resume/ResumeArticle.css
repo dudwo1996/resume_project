@@ -33,7 +33,7 @@
 }
 
 .resume-title-box:hover {
-    background: #e6f4f1;
+    background: #75b2ec;
 }
 
 .resume-title-box:focus {
@@ -46,6 +46,7 @@
     width: 80%;
     margin: auto;
     margin-bottom: 15px;
+    border-bottom: 1px solid black;
 }
 .resume-profile-div {
     display: flex;
@@ -83,7 +84,7 @@
 
 .image-input-label:hover {
     cursor: pointer;
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .user-info-div {
     display: flex;
@@ -105,7 +106,7 @@
 }
 
 .user-name:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 
 .user-birth {
@@ -119,7 +120,7 @@
     border-radius: 5px;
 }
 .user-birth:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .user-phone-num {
     all: unset;
@@ -132,7 +133,7 @@
     border-radius: 5px;
 }
 .user-phone-num:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .user-email {
     all: unset;
@@ -145,7 +146,7 @@
     border-radius: 5px;
 }
 .user-email:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .education-div {
     display: flex;
@@ -172,7 +173,7 @@
 }
 .education-year:hover,
 .career-year:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .education-month,
 .career-month {
@@ -187,14 +188,14 @@
 }
 .education-month:hover,
 .career-year:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .education-select {
     all: unset;
 }
 .education-select:hover {
     cursor: pointer;
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .school-name {
     all: unset;
@@ -206,7 +207,7 @@
     border-radius: 5px;
 }
 .school-name:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .Major-name {
     all: unset;
@@ -217,7 +218,7 @@
     border-radius: 5px;
 }
 .Major-name:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .education-score {
     all: unset;
@@ -228,7 +229,7 @@
     border-radius: 5px;
 }
 .education-score:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .perfect-score {
     all: unset;
@@ -239,7 +240,7 @@
     border-radius: 5px;
 }
 .perfect-score:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 .link-div {
     justify-content: space-around;
@@ -263,7 +264,7 @@
     text-align: left;
 }
 .link-div input:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 
 .github-link,
@@ -301,7 +302,7 @@
 .company-profile:hover,
 .company-position:hover,
 .main-business:hover {
-    /* background-color: #e6f4f1; */
+    background-color: #75b2ec;
 }
 
 .company-profile {
@@ -350,7 +351,7 @@
     border-radius: 5px;
     text-align: left;
     color: #777676;
-    /* background: #E6F4F1; */
+    /* background: #75b2ec; */
     margin: auto;
     border: 0;
 }
@@ -362,7 +363,7 @@
 .project-detail:hover,
 .company-task-detail:hover,
 .cover-letter-detail:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 
 .cover-letter-div {
@@ -377,7 +378,7 @@
 
 .cover-letter-title {
     all: unset;
-    /* background-color: #E6F4F1; */
+    /* background-color: #75b2ec; */
     width: 100%;
     height: 15%;
     margin-bottom: 10px;
@@ -386,7 +387,7 @@
     text-align: center;
 }
 .cover-letter-title:hover {
-    background-color: #e6f4f1;
+    background-color: #75b2ec;
 }
 
 [contenteditable='true']:empty:before {

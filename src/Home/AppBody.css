@@ -23,7 +23,7 @@
     align-items: center;
     width: 200px;
     height: 50px;
-    color: #3d4856;
+    color: #ffffff;
     font-size: 1.2rem;
     font-weight: 800;
     font-family: sans-serif;
@@ -64,6 +64,7 @@
     font-size: 3rem;
     font-family: sans-serif;
     font-weight: 800;
+    text-align: left;
 }
 
 .appbody-text2 {
@@ -71,4 +72,5 @@
     font-size: 2rem;
     font-weight: 800;
     font-family: sans-serif;
+    color: #7d7d7d;
 }
