@@ -32,6 +32,7 @@
 }
 .button-container button:focus,
 .button-container button:hover {
+    background-color: #498dcd;
     border: 0;
     outline: none;
 }

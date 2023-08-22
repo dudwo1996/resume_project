@@ -53,6 +53,9 @@
     background: #df9f1f;
     margin-right: 30px;
 }
+.my-resume-btn-wrap button:hover {
+    background-color: #498dcd;
+}
 .empty-text-box {
     display: flex;
     justify-content: center;

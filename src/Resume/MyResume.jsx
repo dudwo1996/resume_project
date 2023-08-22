@@ -43,7 +43,7 @@ const MyResume = () => {
                                 onClick={() => toResumeDetail(resume)}
                             >
                                 <li>
-                                    <img src={resumeIcon} style={{ marginBottom: '5px' }} />
+                                    <img src={resumeIcon} style={{ marginBottom: '5px', width: '80px' }} />
                                     <div className="mapping-resume-title">{resume.resumeTitle}</div>
                                 </li>
                             </ul>

@@ -47,7 +47,7 @@
 }
 .menu-list:hover,
 .menu-list2:hover {
-    background-color: hsl(209, 84%, 75%);
+    background-color: #498dcd;
     color: #ffffff;
     border: none;
 }
