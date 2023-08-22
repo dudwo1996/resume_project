@@ -231,39 +231,45 @@ const MyResumeDetail = () => {
                                         <img src={careerIcon} /> 경력
                                     </h3>
                                 </div>
-                                <div className="career-container">
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            alignSelf: 'flex-start',
-                                            width: '150px',
-                                        }}
-                                    >
-                                        <span>{state.careerStartY}</span>
-                                        <span>.</span>
-                                        <span>{state.careerStartM}</span>
-                                        <span>~</span>
-                                        <span>{state.careerEndY}</span>
-                                        <span>.</span>
-                                        <span>{state.careerEndM}</span>
-                                    </div>
-                                    <div style={{ textAlign: 'left', width: '295px' }}>
-                                        <span style={{ display: 'block', marginBottom: '10px' }}>
-                                            {state.companyName} | {state.companyPosition}
-                                        </span>
-                                        <span style={{ display: 'block', marginBottom: '10px' }}>
-                                            {state.companyExplain}
-                                        </span>
-                                        <span
-                                            className="main-business"
-                                            style={{ display: 'block', whiteSpace: 'pre-wrap' }}
-                                        >
-                                            {state.companyMainBusiness}
-                                        </span>
-                                    </div>
-                                </div>
+                                {state.careers.map((state, idx) => {
+                                    return (
+                                        <>
+                                            <div className="career-container" key={idx}>
+                                                <div
+                                                    style={{
+                                                        display: 'flex',
+                                                        justifyContent: 'center',
+                                                        alignItems: 'center',
+                                                        alignSelf: 'flex-start',
+                                                        width: '150px',
+                                                    }}
+                                                >
+                                                    <span>{state.careerStartY}</span>
+                                                    <span>.</span>
+                                                    <span>{state.careerStartM}</span>
+                                                    <span>~</span>
+                                                    <span>{state.careerEndY}</span>
+                                                    <span>.</span>
+                                                    <span>{state.careerEndM}</span>
+                                                </div>
+                                                <div style={{ textAlign: 'left', width: '295px' }}>
+                                                    <span style={{ display: 'block', marginBottom: '10px' }}>
+                                                        {state.companyName} | {state.companyPosition}
+                                                    </span>
+                                                    <span style={{ display: 'block', marginBottom: '10px' }}>
+                                                        {state.companyExplain}
+                                                    </span>
+                                                    <span
+                                                        className="main-business"
+                                                        style={{ display: 'block', whiteSpace: 'pre-wrap' }}
+                                                    >
+                                                        {state.companyMainBusiness}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </>
+                                    );
+                                })}
                             </div>
                         </>
                     ) : null}
@@ -283,34 +289,40 @@ const MyResumeDetail = () => {
                                         <img src={projectIcon} /> 프로젝트
                                     </h3>
                                 </div>
-                                <div className="project-container">
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            alignSelf: 'flex-start',
-                                            width: '150px',
-                                        }}
-                                    >
-                                        <span>
-                                            {state.projectStartY}.{state.projectStartM} ~ {state.projectEndY}.
-                                            {state.projectEndM}
-                                        </span>
-                                    </div>
-                                    <div style={{ width: '295px', textAlign: 'left' }}>
-                                        <span style={{ display: 'block', marginBottom: '10px' }}>
-                                            {state.projectName}
-                                        </span>
-                                        <span style={{ display: 'block', marginBottom: '10px' }}>
-                                            {state.projectExplain}
-                                        </span>
-                                        <span style={{ display: 'block', marginBottom: '10px' }}>
-                                            {state.projectPosition}
-                                        </span>
-                                        <span className="main-business">{state.projectMainBusiness}</span>
-                                    </div>
-                                </div>
+                                {state.projects.map((state, idx) => {
+                                    return (
+                                        <>
+                                            <div className="project-container" key={idx}>
+                                                <div
+                                                    style={{
+                                                        display: 'flex',
+                                                        justifyContent: 'center',
+                                                        alignItems: 'center',
+                                                        alignSelf: 'flex-start',
+                                                        width: '150px',
+                                                    }}
+                                                >
+                                                    <span>
+                                                        {state.projectStartY}.{state.projectStartM} ~{' '}
+                                                        {state.projectEndY}.{state.projectEndM}
+                                                    </span>
+                                                </div>
+                                                <div style={{ width: '295px', textAlign: 'left' }}>
+                                                    <span style={{ display: 'block', marginBottom: '10px' }}>
+                                                        {state.projectName}
+                                                    </span>
+                                                    <span style={{ display: 'block', marginBottom: '10px' }}>
+                                                        {state.projectExplain}
+                                                    </span>
+                                                    <span style={{ display: 'block', marginBottom: '10px' }}>
+                                                        {state.projectPosition}
+                                                    </span>
+                                                    <span className="main-business">{state.projectMainBusiness}</span>
+                                                </div>
+                                            </div>
+                                        </>
+                                    );
+                                })}
                             </div>
                         </>
                     ) : null}
@@ -330,36 +342,42 @@ const MyResumeDetail = () => {
                                         <img src={educationIcon} /> 교육 이력
                                     </h3>
                                 </div>
-                                <div className="education-container">
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            alignSelf: 'flex-start',
-                                            width: '150px',
-                                        }}
-                                    >
-                                        <span>
-                                            {state.educationStartY}.{state.educationStartM} ~ {state.educationEndY}.
-                                            {state.educationEndM}
-                                        </span>
-                                    </div>
-                                    <div style={{ textAlign: 'left', width: '295px' }}>
-                                        <span style={{ display: 'block', marginBottom: '10px' }}>
-                                            {state.educationName} | {state.educationExplain}
-                                        </span>
-                                        <span style={{ display: 'block', marginBottom: '10px' }}>
-                                            {state.educationPosition}
-                                        </span>
-                                        <span
-                                            className="main-business"
-                                            style={{ display: 'block', whiteSpace: 'pre-wrap' }}
-                                        >
-                                            {state.educationMainBusiness}
-                                        </span>
-                                    </div>
-                                </div>
+                                {state.educations.map((state, idx) => {
+                                    return (
+                                        <>
+                                            <div className="education-container" key={idx}>
+                                                <div
+                                                    style={{
+                                                        display: 'flex',
+                                                        justifyContent: 'center',
+                                                        alignItems: 'center',
+                                                        alignSelf: 'flex-start',
+                                                        width: '150px',
+                                                    }}
+                                                >
+                                                    <span>
+                                                        {state.educationStartY}.{state.educationStartM} ~{' '}
+                                                        {state.educationEndY}.{state.educationEndM}
+                                                    </span>
+                                                </div>
+                                                <div style={{ textAlign: 'left', width: '295px' }}>
+                                                    <span style={{ display: 'block', marginBottom: '10px' }}>
+                                                        {state.educationName} | {state.educationExplain}
+                                                    </span>
+                                                    <span style={{ display: 'block', marginBottom: '10px' }}>
+                                                        {state.educationPosition}
+                                                    </span>
+                                                    <span
+                                                        className="main-business"
+                                                        style={{ display: 'block', whiteSpace: 'pre-wrap' }}
+                                                    >
+                                                        {state.educationMainBusiness}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </>
+                                    );
+                                })}
                             </div>
                         </>
                     ) : null}

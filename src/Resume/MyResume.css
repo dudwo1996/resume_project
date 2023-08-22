@@ -55,6 +55,7 @@
 }
 .my-resume-btn-wrap button:hover {
     background-color: #498dcd;
+    border-color: none;
 }
 .empty-text-box {
     display: flex;
