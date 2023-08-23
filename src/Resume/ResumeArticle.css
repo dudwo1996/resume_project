@@ -50,7 +50,7 @@
 }
 .resume-profile-div {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 80%;
     margin: auto;
@@ -88,6 +88,7 @@
 }
 .user-info-div {
     display: flex;
+    width: 350px;
 }
 .user-name-div {
     display: flex;
@@ -150,7 +151,7 @@
 }
 .education-div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 80%;
     margin: auto;
@@ -271,7 +272,7 @@
 .notion-link,
 .blog-link {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 15px;
 }
@@ -279,7 +280,7 @@
 .career-div,
 .project-div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 80%;
     margin: auto;

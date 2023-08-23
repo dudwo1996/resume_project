@@ -5,13 +5,12 @@ import { useIndexedDB } from 'react-indexed-db';
 import { useCookies } from 'react-cookie';
 import resumeIcon from '../image/myresumeimage.png';
 import deleteIcon from '../image/delete.png';
-import eyeIcon from '../image/eye.png';
 import { useNavigate } from 'react-router-dom';
 
 const MyResume = () => {
     const navigate = useNavigate();
     const userId = useCookies(['id'])[0].id;
-    const { getByIndex } = useIndexedDB('resume');
+    const { getByIndex, getAll, update } = useIndexedDB('resume');
     const [resumeList, setResumeList] = useState([]);
     const toWriteResume = () => {
         navigate('/home/writeresume');
@@ -19,6 +18,22 @@ const MyResume = () => {
 
     const toResumeDetail = (resumeData) => {
         navigate('/home/myresume/myresumedetail', { state: resumeData });
+    };
+
+    const myResumeDelete = async (resumeId) => {
+        if (confirm('해당 이력서를 정말 삭제하시겠습니까?')) {
+            const getAllRes = await getAll();
+            const selectedData = getAllRes.filter((x) => x.id === userId);
+            const newData = selectedData[0].resumeData.filter((x) => x.resumeId !== resumeId);
+            selectedData[0].resumeData = newData;
+            update({ id: selectedData[0].id, resumeData: selectedData[0].resumeData });
+            alert('해당 이력서가 삭제되었습니다.');
+            getByIndex('id', userId).then((data) => {
+                setResumeList(data.resumeData);
+            });
+        } else {
+            return;
+        }
     };
 
     useEffect(() => {
@@ -41,21 +56,20 @@ const MyResume = () => {
                             return (
                                 <ul title={resume.resumeTitle} className="mapping-resume" key={idx}>
                                     <li>
-                                        <div>
-                                            <img
-                                                src={eyeIcon}
-                                                className="eye-icon"
-                                                onClick={() => toResumeDetail(resume)}
-                                            />
-                                            <img src={deleteIcon} className="delete-icon" />
+                                        <div className="my-resume-wrap">
                                             <img
                                                 src={resumeIcon}
-                                                // className="resume-icon"
                                                 style={{ marginBottom: '5px', width: '80px' }}
+                                                onClick={() => toResumeDetail(resume)}
                                             />
                                             <div className="mapping-resume-title">
                                                 {resume.resumeTitle === '' ? '제목없음' : resume.resumeTitle}
                                             </div>
+                                            <img
+                                                src={deleteIcon}
+                                                className="delete-icon"
+                                                onClick={() => myResumeDelete(resume.resumeId)}
+                                            />
                                         </div>
                                     </li>
                                 </ul>

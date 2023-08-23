@@ -110,54 +110,53 @@ const MyResumeDetail = () => {
                                         )}
                                     </div>
                                     <div className="basic-info-div">
-                                        <div>
-                                            <div
-                                                style={{
-                                                    display: 'flex',
-                                                    justifyContent: 'flex-start',
-                                                    alignItems: 'center',
-                                                    fontSize: '25px',
-                                                    fontWeight: '500',
-                                                }}
-                                            >
-                                                {state.userName}
-                                            </div>
-                                            <div
-                                                style={{
-                                                    display: 'flex',
-                                                    justifyContent: 'flex-start',
-                                                    alignItems: 'center',
-                                                }}
-                                            >
-                                                <img src={birthdayIcon} />
-                                                <span style={{ marginLeft: '10px', fontWeight: '600' }}>
-                                                    {state.userBirth}
-                                                </span>
-                                            </div>
-                                            <div
-                                                style={{
-                                                    display: 'flex',
-                                                    justifyContent: 'flex-start',
-                                                    alignItems: 'center',
-                                                }}
-                                            >
-                                                <img src={phoneIcon} />
-                                                <span style={{ marginLeft: '10px', fontWeight: '600' }}>
-                                                    {state.userPhoneNum}
-                                                </span>
-                                            </div>
-                                            <div
-                                                style={{
-                                                    display: 'flex',
-                                                    justifyContent: 'flex-start',
-                                                    alignItems: 'center',
-                                                }}
-                                            >
-                                                <img src={emailIcon} />
-                                                <span style={{ marginLeft: '10px', fontWeight: '600' }}>
-                                                    {state.userEmail}
-                                                </span>
-                                            </div>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItems: 'center',
+                                                fontSize: '25px',
+                                                fontWeight: '500',
+                                                marginBottom: '15px',
+                                            }}
+                                        >
+                                            {state.userName}
+                                        </div>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            <img src={birthdayIcon} />
+                                            <span style={{ marginLeft: '10px', fontWeight: '600' }}>
+                                                {state.userBirth}
+                                            </span>
+                                        </div>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            <img src={phoneIcon} />
+                                            <span style={{ marginLeft: '10px', fontWeight: '600' }}>
+                                                {state.userPhoneNum}
+                                            </span>
+                                        </div>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            <img src={emailIcon} />
+                                            <span style={{ marginLeft: '10px', fontWeight: '600' }}>
+                                                {state.userEmail}
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -194,8 +193,8 @@ const MyResumeDetail = () => {
                                             {state.graduationDayY}.{state.graduationDayM} 졸업(예정)
                                         </span>
                                     </div>
-                                    <div style={{ textAlign: 'left', width: '295px' }}>
-                                        <span className="main-business">
+                                    <div style={{ textAlign: 'left', width: '430px' }}>
+                                        <span className="detail-main-business">
                                             {state.highLevel === 'highSchool'
                                                 ? '고등학교'
                                                 : state.highLevel === 'juniorCollege'
@@ -207,8 +206,7 @@ const MyResumeDetail = () => {
                                                 : state.highLevel === 'universityDocter'
                                                 ? '대학원(박사)'
                                                 : '없음'}{' '}
-                                            |{state.schoolName} | {state.major}
-                                            {state.score}/{state.perfectScore}{' '}
+                                            | {state.schoolName} | {state.major} | {state.score}/{state.perfectScore}{' '}
                                         </span>
                                     </div>
                                 </div>
@@ -252,7 +250,7 @@ const MyResumeDetail = () => {
                                                     <span>.</span>
                                                     <span>{state.careerEndM}</span>
                                                 </div>
-                                                <div style={{ textAlign: 'left', width: '295px' }}>
+                                                <div style={{ textAlign: 'left', width: '430px' }}>
                                                     <span style={{ display: 'block', marginBottom: '10px' }}>
                                                         {state.companyName} | {state.companyPosition}
                                                     </span>
@@ -260,7 +258,7 @@ const MyResumeDetail = () => {
                                                         {state.companyExplain}
                                                     </span>
                                                     <span
-                                                        className="main-business"
+                                                        className="detail-main-business"
                                                         style={{ display: 'block', whiteSpace: 'pre-wrap' }}
                                                     >
                                                         {state.companyMainBusiness}
@@ -307,7 +305,7 @@ const MyResumeDetail = () => {
                                                         {state.projectEndY}.{state.projectEndM}
                                                     </span>
                                                 </div>
-                                                <div style={{ width: '295px', textAlign: 'left' }}>
+                                                <div style={{ width: '430px', textAlign: 'left' }}>
                                                     <span style={{ display: 'block', marginBottom: '10px' }}>
                                                         {state.projectName}
                                                     </span>
@@ -317,7 +315,9 @@ const MyResumeDetail = () => {
                                                     <span style={{ display: 'block', marginBottom: '10px' }}>
                                                         {state.projectPosition}
                                                     </span>
-                                                    <span className="main-business">{state.projectMainBusiness}</span>
+                                                    <span className="detail-main-business">
+                                                        {state.projectMainBusiness}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </>
@@ -360,7 +360,7 @@ const MyResumeDetail = () => {
                                                         {state.educationEndY}.{state.educationEndM}
                                                     </span>
                                                 </div>
-                                                <div style={{ textAlign: 'left', width: '295px' }}>
+                                                <div style={{ textAlign: 'left', width: '430px' }}>
                                                     <span style={{ display: 'block', marginBottom: '10px' }}>
                                                         {state.educationName} | {state.educationExplain}
                                                     </span>
@@ -368,7 +368,7 @@ const MyResumeDetail = () => {
                                                         {state.educationPosition}
                                                     </span>
                                                     <span
-                                                        className="main-business"
+                                                        className="detail-main-business"
                                                         style={{ display: 'block', whiteSpace: 'pre-wrap' }}
                                                     >
                                                         {state.educationMainBusiness}
@@ -446,7 +446,9 @@ const MyResumeDetail = () => {
                                     </h3>
                                 </div>
                                 <div className="self-intro-container">
-                                    <span style={{ display: 'block' }}>{state.selfIntroName}</span>
+                                    <span style={{ display: 'block', fontSize: '2rem', marginBottom: '15px' }}>
+                                        {state.selfIntroName}
+                                    </span>
                                     <span style={{ textAlign: 'left', display: 'block', whiteSpace: 'pre-wrap' }}>
                                         {state.selfIntroDetail}
                                     </span>

@@ -422,17 +422,17 @@ const ResumeArticle = (props) => {
                                     />
                                 </label>
                             </div>
-                            <div className="user-name-div">
-                                <input
-                                    type="text"
-                                    className="user-name"
-                                    placeholder="이름"
-                                    onChange={(e) => setUserName(e.target.value)}
-                                    value={userName}
-                                />
-                            </div>
+                            {/* <div className="user-name-div">
+                            </div> */}
                             <div className="user-info-div">
                                 <div>
+                                    <input
+                                        type="text"
+                                        className="user-name"
+                                        placeholder="이름"
+                                        onChange={(e) => setUserName(e.target.value)}
+                                        value={userName}
+                                    />
                                     <div
                                         style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}
                                     >
@@ -513,7 +513,7 @@ const ResumeArticle = (props) => {
                                 />
                                 <span style={{ height: '19px', fontSize: '14px' }}>졸업(예정)</span>
                             </div>
-                            <div>
+                            <div style={{ width: '430px' }}>
                                 <select
                                     className="education-select"
                                     placeholder="학력 구분"
