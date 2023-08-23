@@ -58,6 +58,7 @@ const MyResume = () => {
                                     <li>
                                         <div className="my-resume-wrap">
                                             <img
+                                                className="resume-image"
                                                 src={resumeIcon}
                                                 style={{ marginBottom: '5px', width: '80px' }}
                                                 onClick={() => toResumeDetail(resume)}
